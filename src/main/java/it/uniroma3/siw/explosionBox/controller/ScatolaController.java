@@ -20,10 +20,10 @@ public class ScatolaController {
 	@Autowired
 	private CardService cardService;
 
-	@RequestMapping(value = "/shop", method = RequestMethod.GET)
+	@RequestMapping(value = "/inVendita", method = RequestMethod.GET)
 	public String getScatole(Model model) {
-		model.addAttribute("scatole", this.service.trovaPerNonOrdinate());
-		return "scatole.html";
+		model.addAttribute("scatole", this.service.findAll());
+		return "listaScatole.html";
 	}
 
 	@RequestMapping(value = "/scatola/{id}", method = RequestMethod.GET)

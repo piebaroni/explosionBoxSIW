@@ -16,7 +16,7 @@ public class CardController {
 	private CardService service;
 	
 	@RequestMapping(value = "/card/{id}", method = RequestMethod.GET)
-    public String getScatola(@PathVariable("id") Long id, Model model) {
+    public String getCard(@PathVariable("id") Long id, Model model) {
     	Card c = this.service.trovaPerId(id);
     	model.addAttribute("card", c);
     	return "card.html";
