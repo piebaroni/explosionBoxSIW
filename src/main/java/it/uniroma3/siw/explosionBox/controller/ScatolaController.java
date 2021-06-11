@@ -16,21 +16,21 @@ public class ScatolaController {
 
 	@Autowired
 	private ScatolaService service;
-	
+
 	@Autowired
 	private CardService cardService;
-	
+
 	@RequestMapping(value = "/shop", method = RequestMethod.GET)
 	public String getScatole(Model model) {
-		model.addAttribute("scatole", this.service.findAll());
+		model.addAttribute("scatole", this.service.trovaPerNonOrdinate());
 		return "scatole.html";
-		}
-	
+	}
+
 	@RequestMapping(value = "/scatola/{id}", method = RequestMethod.GET)
-    public String getScatola(@PathVariable("id") Long id, Model model) {
-    	Scatola s = this.service.trovaPerId(id);
-    	model.addAttribute("scatola", s);
-    	model.addAttribute("cards", this.cardService.trovaPerScatolaId(id));
-    	return "scatola.html";
-    }
+	public String getScatola(@PathVariable("id") Long id, Model model) {
+		Scatola s = this.service.trovaPerId(id);
+		model.addAttribute("scatola", s);
+		model.addAttribute("cards", this.cardService.trovaPerScatolaId(id));
+		return "scatola.html";
+	}
 }

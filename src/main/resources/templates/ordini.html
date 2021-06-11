@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${title}"></title>
+        <link rel="stylesheet" th:href="@{/css/index.css}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>EXPLOSION BOX</h1>
+        <ul>
+			<li th:each="ordine : ${ordini}">
+				<a href = "ordine.html"
+				   th:href="@{'/ordine' + '/' + ${ordine.id}}" 
+				   th:text="|Ordine effettuato il: ${ordine.data}|">Data ordine</a>
+			</li>
+		</ul>
+    </body>
+</html> 
