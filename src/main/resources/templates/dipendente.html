@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${title}"></title>
+        <link rel="stylesheet" th:href="@{/css/index.css}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>EXPLOSION BOX</h1>
+        <div th:if="${dipendente}" th:object="${dipendente}">
+            <h3 th:text="|${dipendente.nome} ${dipendente.cognome}|"></h3>
+            <p>
+                <strong>Nome:</strong><span th:text="*{nome}">qui-va-nome</span><br>
+                <strong>Cognome:</strong><span th:text="*{cognome}">qui-va-cognome</span><br>
+                <strong>Data di Nascita:</strong><span th:text="*{dataNascita}">qui-va-data-di-nascita</span><br>
+                <strong>Luogo di Nascita:</strong><span th:text="*{luogoNascita}">qui-va-luogo-di-nascita</span><br>
+                <strong>Email:</strong><span th:text="*{email}">qui-va-email</span><br>
+                <strong>Telefono:</strong><span th:text="*{telefono}">qui-va-telefono</span><br>
+                <strong>Matricola:</strong><span th:text="*{matricola}">qui-va-matricola</span><br>
+            </p>
+        </div>
+        <div th:unless="${dipendente}">Non esiste</div>
+    </body>
+</html> 

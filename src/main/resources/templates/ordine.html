@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${title}"></title>
+        <link rel="stylesheet" th:href="@{/css/index.css}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>EXPLOSION BOX</h1>
+        <div th:if="${ordine}" th:object="${ordine}">
+            <div th:each="scatola : ${scatole}">
+                <a href = "scatola.html"
+               th:href="@{'/scatola' + '/' + ${scatola.id}}" 
+               th:text="|${scatola.nome}|">scatola</a>
+            </div>
+            <strong>Indirizzo di consegna:</strong><span th:text="*{indirizzo}">qui-va-indirizzo</span><br>
+            <strong>Data dell'ordine:</strong><span th:text="*{data}">qui-va-data</span><br>
+            <strong>Recapito telefonico:</strong><span th:text="*{telefono}">qui-va-telefono</span><br>
+        </div>
+        <div th:unless="${ordine}">Non esiste</div>
+    </body>
+</html> 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${title}"></title>
+        <link rel="stylesheet" th:href="@{/css/index.css}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>EXPLOSION BOX</h1>
+        <div th:if="${scatola}" th:object="${scatola}">
+            <h3 th:text="${scatola.nome}"></h3>
+            <p th:text="${scatola.dimensione}">dimensione</p><br>
+            <p th:text="${scatola.descrizione}">descrizione</p><br>
+            <p th:text="${scatola.colore1}">colore1</p><br>
+            <p th:text="${scatola.colore2}">colore2</p><br>
+            <p th:text="${scatola.numeroFoto}">numeroFoto</p><br>
+            <div th:each="card : ${cards}">
+                <a href = "card.html"
+               th:href="@{'/card' + '/' + ${card.id}}" 
+               th:text="|${card.descrizione}|">descrizione</a>
+            </div>
+            <a href = "dipendente.html" th:href="@{'/dipendente' + '/' + ${dipendente.id}}" 
+            th:text="|*{dipendente.nome} *{dipendente.cognome}|">nome e cognome dipendente</a>
+        </div>
+        <div th:unless="${scatola}">Non esiste</div>
+    </body>
+</html> 

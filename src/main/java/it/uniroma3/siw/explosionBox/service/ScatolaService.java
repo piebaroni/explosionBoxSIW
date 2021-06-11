@@ -27,6 +27,14 @@ public class ScatolaService {
 		return repository.findByNome(nome);
 	}
 	
+	public List<Scatola> trovaPerOrdine(Long id){
+		return repository.findByOrdineId(id);
+	}
+	
+	public List<Scatola> trovaPerNonOrdinate() {
+		return repository.findByOrdineIdIsNull();
+	}
+	
 	public List<Scatola> findAll(){
 		return (List<Scatola>) repository.findAll();
 	}
