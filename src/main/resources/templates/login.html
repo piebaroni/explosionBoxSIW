@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${title}"></title>
+        <link rel="stylesheet" th:href="@{/css/index.css}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <nav class="top">
+    	<h1> Explosion Box </h1> 
+  		<h4> Di Nepi-Baroni</h4>
+  		</nav>
+        <section>
+            <div>
+                <p>Accedi</p>
+            </div>
+            <form th:action="@{/login}" method="POST">
+                <table>
+                    <tr>
+                        <td>Username</td>
+                        <td><input type="text" placeholder="username" name="username"></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" placeholder="password" name="password"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit">Accedi</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+    </body>
+</html>
