@@ -7,4 +7,6 @@ import it.uniroma3.siw.explosionBox.model.Card;
 public interface CardRepository extends CrudRepository<Card, Long>{
 
 	public List<Card> findByColore(String colore);
+
+	public List<Card> findByScatolaId(Long id);
 }
