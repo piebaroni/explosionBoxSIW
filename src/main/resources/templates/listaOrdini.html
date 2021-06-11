@@ -11,7 +11,7 @@
 			<li th:each="ordine : ${ordini}">
 				<a href = "ordine.html"
 				   th:href="@{'/ordine' + '/' + ${ordine.id}}" 
-				   th:text="|Ordine effettuato il: ${ordine.data}|">Data ordine</a>
+				   th:text="| 'Ordine effettuato il:' +' ${ordine.data}|">Data ordine</a>
 			</li>
 		</ul>
     </body>

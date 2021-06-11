@@ -9,7 +9,9 @@
         <h1>EXPLOSION BOX</h1>
         <ul>
 			<li th:each="scatola : ${scatole}">
-				<p>ciao</p>
+				<a href = "scatola.html"
+				   th:href="@{'/scatola' + '/' + ${scatola.id}}" 
+				   th:text="${scatola.nome}">Data ordine</a>
 			</li>
 		</ul>
     </body>
