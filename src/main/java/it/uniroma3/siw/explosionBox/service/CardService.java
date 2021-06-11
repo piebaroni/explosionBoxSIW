@@ -27,6 +27,10 @@ public class CardService {
 		return (List<Card>) repository.findAll();
 	}
 	
+	public List<Card> trovaPerScatolaId(Long id){
+		return repository.findByScatolaId(id);
+	}
+	
 	@Transactional
 	public Card trovaPerId(Long id) {
 		Optional<Card> optional = repository.findById(id);

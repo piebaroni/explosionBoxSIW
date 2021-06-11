@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Card {
@@ -21,6 +22,9 @@ public class Card {
 	
 	@Column(nullable = false)
 	private String tipologia;
+	
+	@ManyToOne
+	private Scatola scatola;
 	
 	/*COSTRUTTORE*/
 	public Card() {
@@ -57,5 +61,13 @@ public class Card {
 
 	public void setTipologia(String tipologia) {
 		this.tipologia = tipologia;
+	}
+
+	public Scatola getScatola() {
+		return scatola;
+	}
+
+	public void setScatola(Scatola scatola) {
+		this.scatola = scatola;
 	}
 }
