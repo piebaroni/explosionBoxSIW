@@ -30,7 +30,7 @@ public class Ordine {
 	@Column(nullable = false)
 	private int telefono;
 	
-	@Column(nullable = false)
+	//@Column(nullable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate data;
 	

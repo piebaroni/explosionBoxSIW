@@ -7,8 +7,11 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
+import it.uniroma3.siw.explosionBox.model.Credentials;
 import it.uniroma3.siw.explosionBox.model.Dipendente;
 import it.uniroma3.siw.explosionBox.model.Scatola;
+import it.uniroma3.siw.explosionBox.model.Utente;
+import it.uniroma3.siw.explosionBox.service.CredentialsService;
 import it.uniroma3.siw.explosionBox.service.DipendenteService;
 import it.uniroma3.siw.explosionBox.service.ScatolaService;
 
@@ -20,6 +23,9 @@ public class InizializzaDB implements ApplicationListener<ContextRefreshedEvent>
 	
 	@Autowired
 	private DipendenteService ds;
+	
+	@Autowired
+	private CredentialsService cs;
 	
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
@@ -121,6 +127,17 @@ public class InizializzaDB implements ApplicationListener<ContextRefreshedEvent>
 		s8.setNumeroFoto(1);
 		s8.setDipendente(d);
 		ss.inserisci(s8);
+		
+		Utente u = new Utente();
+		u.setNome("nome");
+		u.setCognome("cognome");
+		
+		Credentials c = new Credentials();
+		c.setUtente(u);
+		c.setUsername("user");
+		c.setPassword("user");
+		c.setRole("DEFAULT");
+		cs.saveCredentials(c);
 	}
 
 }

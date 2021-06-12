@@ -3,20 +3,24 @@
     <head>
         <title th:text="${title}"></title>
         <link rel="stylesheet" th:href="@{/css/index.css}" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap" rel="stylesheet"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
     </head>
     <body>
-        <h1>EXPLOSION BOX</h1>
+        <div th:replace="fragments/base.html :: header"></div>
         <div th:if="${ordine}" th:object="${ordine}">
             <div th:each="scatola : ${scatole}">
+                <img th:src="@{/images/{image}(image=${scatola.linkFoto})}">
                 <a href = "scatola.html"
-               th:href="@{'/scatola' + '/' + ${scatola.id}}" 
-               th:text="|${scatola.nome}|">scatola</a>
+                th:href="@{'/scatola' + '/' + ${scatola.id}}" 
+                th:text="|${scatola.nome}|">scatola</a>
             </div>
             <strong>Indirizzo di consegna:</strong><span th:text="*{indirizzo}">qui-va-indirizzo</span><br>
             <strong>Data dell'ordine:</strong><span th:text="*{data}">qui-va-data</span><br>
             <strong>Recapito telefonico:</strong><span th:text="*{telefono}">qui-va-telefono</span><br>
         </div>
         <div th:unless="${ordine}">Non esiste</div>
+        <footer th:replace="fragments/base.html :: fondo"></footer>
     </body>
 </html> 
