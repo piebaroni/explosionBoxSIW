@@ -16,10 +16,9 @@ public class DipendenteController {
 	private DipendenteService service;
 	
 	@RequestMapping(value = "/dipendente/{id}", method = RequestMethod.GET)
-    public String getScatola(@PathVariable("id") Long id, Model model) {
+    public String getDipendente(@PathVariable("id") Long id, Model model) {
     	Dipendente d = this.service.trovaPerId(id);
     	model.addAttribute("dipendente", d);
     	return "dipendente.html";
     }
-	
 }

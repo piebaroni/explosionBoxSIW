@@ -1,17 +1,16 @@
 package it.uniroma3.siw.explosionBox.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import it.uniroma3.siw.explosionBox.model.Scatola;
 import it.uniroma3.siw.explosionBox.service.CardService;
 import it.uniroma3.siw.explosionBox.service.ScatolaService;
 
-@Component
+@Controller
 public class ScatolaController {
 
 	@Autowired
@@ -20,10 +19,10 @@ public class ScatolaController {
 	@Autowired
 	private CardService cardService;
 
-	@RequestMapping(value = "/shop", method = RequestMethod.GET)
+	@RequestMapping(value = "/inVendita", method = RequestMethod.GET)
 	public String getScatole(Model model) {
-		model.addAttribute("scatole", this.service.trovaPerNonOrdinate());
-		return "scatole.html";
+		model.addAttribute("scatole", this.service.findAll());
+		return "listaScatole.html";
 	}
 
 	@RequestMapping(value = "/scatola/{id}", method = RequestMethod.GET)

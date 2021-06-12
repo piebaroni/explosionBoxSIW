@@ -11,7 +11,7 @@
 			<li th:each="scatola : ${scatole}">
 				<a href = "scatola.html"
 				   th:href="@{'/scatola' + '/' + ${scatola.id}}" 
-				   th:text="|${scatola.nome} |">Nome scatola</a>
+				   th:text="|${scatola.nome}|">nome scatola</a>
 			</li>
 		</ul>
     </body>

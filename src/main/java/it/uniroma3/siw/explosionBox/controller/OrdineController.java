@@ -28,16 +28,16 @@ public class OrdineController {
 	private ScatolaService scatolaService;
 	
 	@RequestMapping(value = "/ordini", method = RequestMethod.GET)
-	public String getScatole(Model model) {
+	public String getOrdini(Model model) {
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		Credentials credentials = credentialsService.getCredentialsByUsername(userDetails.getUsername());
 		Utente c = credentials.getUtente();
 		model.addAttribute("ordini", this.service.trovaPerCliente(c.getId()));
-		return "ordini.html";
+		return "listaOrdini.html";
 	}
 	
 	@RequestMapping(value = "/ordine/{id}", method = RequestMethod.GET)
-	public String getScatola(@PathVariable("id") Long id, Model model) {
+	public String getOrdine(@PathVariable("id") Long id, Model model) {
 		Ordine o = this.service.trovaPerId(id);
 		model.addAttribute("ordine", o);
 		model.addAttribute("scatole", this.scatolaService.trovaPerOrdine(id));

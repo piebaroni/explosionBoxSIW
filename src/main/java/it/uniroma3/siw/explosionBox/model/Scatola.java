@@ -42,6 +42,9 @@ public class Scatola {
 	@ManyToOne
 	private Dipendente dipendente;
 	
+	@ManyToOne
+	private Ordine ordine;
+	
 	@OneToMany(mappedBy = "scatola")
 	private List<Card> cards;
 
