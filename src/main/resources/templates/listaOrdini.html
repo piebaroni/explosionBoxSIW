@@ -3,16 +3,19 @@
     <head>
         <title th:text="${title}"></title>
         <link rel="stylesheet" th:href="@{/css/index.css}" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap" rel="stylesheet"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
     </head>
     <body>
-        <h1>EXPLOSION BOX</h1>
+        <div th:replace="fragments/base.html :: header"></div>
         <ul>
 			<li th:each="ordine : ${ordini}">
 				<a href = "ordine.html"
 				   th:href="@{'/ordine' + '/' + ${ordine.id}}" 
-				   th:text="| 'Ordine effettuato il:' +' ${ordine.data}|">Data ordine</a>
+				   th:text="|Ordine del: ${ordine.data}|">Data ordine</a>
 			</li>
 		</ul>
+        <footer th:replace="fragments/base.html :: fondo"></footer>
     </body>
 </html> 

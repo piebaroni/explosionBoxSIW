@@ -30,6 +30,7 @@
                     th:text="|*{dipendente.nome} *{dipendente.cognome}|">nome e cognome dipendente</a>
                 </div>
             </div>
+            <a th:href="@{'/nuovoOrdine' + '/' + ${scatola.id}}">Compra questa scatola</a>
         </div>
         <div th:unless="${scatola}">Non esiste</div>
         <footer th:replace="fragments/base.html :: fondo"></footer>

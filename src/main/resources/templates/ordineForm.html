@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${title}"></title>
+        <link rel="stylesheet" th:href="@{/css/index.css}" />
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap" rel="stylesheet"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </head>
+    <body>
+        <div th:replace="fragments/base.html :: header"></div>
+        <section>
+            <form th:action="@{/faiOrdine}" method="POST" th:object="${ordine}">
+                <table>
+                    <tr>
+                        <td>Indirizzo di consegna</td>
+                        <td><input type="text" placeholder="indirizzo"
+                                   th:field="${ordine.indirizzo}"/></td>
+                        <td th:if="${#fields.hasErrors('indirizzo')}"
+                            th:errors="${ordine.indirizzo}" th:style="'color:red'"></td>
+                    </tr>
+                    <tr>
+                        <td>Recapito telefonico</td>
+                        <td><input type="text" placeholder="text"
+                                   th:field="${ordine.telefono}"/></td>
+                        <td th:if="${#fields.hasErrors('telefono')}"
+                            th:errors="${ordine.telefono}" th:style="'color:red'"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit">Registra</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+        <footer th:replace="fragments/base.html :: fondo"></footer>
+    </body>
+</html>
