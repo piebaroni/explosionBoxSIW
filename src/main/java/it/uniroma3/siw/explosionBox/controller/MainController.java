@@ -17,4 +17,18 @@ public class MainController {
 	public String home(Model model) {
 			return "home";
 	}
+	
+	@RequestMapping(value = {"/consegna"}, method = RequestMethod.GET)
+	public String consegna(Model model) {
+			return "consegna";
+	}
+	
+	@RequestMapping(value = {"/policy"}, method = RequestMethod.GET)
+	public String policy(Model model) {
+			return "policy";
+	}
+	@RequestMapping(value = {"/cookies"}, method = RequestMethod.GET)
+	public String cookies(Model model) {
+			return "cookies";
+	}
 }

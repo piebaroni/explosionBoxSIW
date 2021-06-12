@@ -2,51 +2,25 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title th:text="${title}"></title>
-        <link rel="stylesheet" th:href="@{/css/index.css}" />
+        <link rel="stylesheet" th:href="@{/css/info.css}" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body>
-    <img src="images/ProvaLogo.jpg"/></img>
-         <div id="login">
-          <a th:href="@{/login}">Accedi</a>
-          <a th:href="@{/register}">Registrati</a>
-        </div>
-  <div class="menu">
-    <a>HOME</a>
-    <a>SHOP</a>
-    <a>SOME IDEAS</a>
-    <a>FAQ</a>
-    <a>CONTACT</a>
-  </div>
-  <div id="linea"></div>
-<p> Store Policy
-Customer Care
-I’m a customer care section. I’m a great place to write a long text about your company and your services, and, most importantly, how to contact your store with queries. Writing a detailed customer care policy is a great way to build trust and reassure your customers that they can buy with confidence.
-I'm the second paragraph in your customer care section. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add details about your policy and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you.
-Privacy & Safety
-I’m a privacy & safety policy section. I’m a great place to inform your customers about how you use, store, and protect their personal information. Add details such as how you use third-party banking to verify payment, the way you collect data or when will you contact users after their purchase was completed successfully. 
-Your user’s privacy is of the highest importance to your business, so take the time to write an accurate and detailed policy. Use straightforward language to gain their trust and make sure they keep coming back to your site!
-Wholesale Inquiries
-I’m a wholesale inquiries section. I’m a great place to inform other retailers about how they can sell your stunning products. Use plain language and give as much information as possible in order to promote your business and take it to the next level! 
-I'm the second paragraph in your wholesale inquiries section. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add details about your policy and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you.</p>
-<div id="fine">
-  <div class="pagine">
-    <p class="pagina">Shipping & Returns<p>
-    <p class="pagina">Store Policy<p>
-    <p class="pagina">Payment Methods<p>
-  </div>
-  <div class="pagine">
-    <p class="pagina">Contact<p>
-    <p class="pagina">Tel: 123-456-7890<p>
-    <p class="pagina">help@explosionbox.com<p>
-  </div>
-  <div class="pagine">
-    <p class="pagina">Facebook<p>
-    <p class="pagina">Instagram<p>
-    <p class="pagina">Pinterest<p>
-  </div>  
-</div>
-<footer>© 2021 Di Nepi - Baroni. ExplosionBox</footer>
-
+  <body>
+  <div th:replace="fragments/base.html :: header"></div>
+  <p id="titolo">Store Policy </p>  
+  <p id="testo">Gentile Utente,</p>
+  <p id="testo">la presente informativa ha lo scopo di descrivere il trattamento dei dati personali raccolti tramite questo sito (di seguito “<bold>Sito</bold>”) di proprietà di Explosion Box (di seguito “<bold>ExplosionBox</bold>”).</p>
+  <p id="testo">Tale informativa è resa ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 General Data Protection Regulation (di seguito “GDPR”) agli utenti che interagiscono con i servizi web del Sito (di seguito “Interessati”); 
+  la navigazione all'interno del Sito è libera e non richiede registrazione alcuna, con eccezione di alcune aree in cui l'utente può liberamente ed espressamente fornire una serie di dati che lo riguardino per accedere a servizi specificamente individuati. </p>
+  <p id="testo">Laddove, pertanto, il visitatore intenda fornire i propri dati personali per accedere a tali ulteriori servizi, è presente la specifica informativa sul trattamento dei dati personali redatta al fine di definire finalità e modalità del trattamento
+   dei dati di ciascun servizio da parte di ExplosionBox. In riferimento ai trattamenti ivi descritti, l’interessato potrà esprimere liberamente il proprio consenso al trattamento.</p>
+  <p id="testo">Desideriamo informarLa, difatti, che il GDPR prevede la tutela delle persone fisiche e di altri soggetti rispetto al trattamento dei dati personali.</p>
+  <p id="testo">Secondo la normativa il trattamento dei dati di carattere personale deve essere improntato ai principi di liceità correttezza e trasparenza ai sensi dell’art. 5 del GDPR.</p>
+  <p id="testo">Ai sensi degli articoli 13 e 14 del GDPR, pertanto, Le forniamo le seguenti informazioni:</p>
+  <p id="testo"><bold>1. Titolare del trattamento</bold> </p>
+  <p id="testo">Il titolare del trattamento è ExplosionBox con sede legale a Roma (RM), Via Tommasi, 27, C.A.P. 00123 (di seguito “<bold>Titolare</bold>”). </p>
+  <p id="testo"></p>
+  <div th:replace="fragments/base.html :: pre-fondo"></div>
+  <footer th:replace="fragments/base.html :: fondo"></footer>
 </body>
 </html>

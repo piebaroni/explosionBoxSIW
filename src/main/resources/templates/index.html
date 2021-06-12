@@ -14,23 +14,7 @@
     <p id="titolo"> BOX </p> 
     <p id="bottone" ><a id="bottone2" th:href="@{/inVendita}">Visita lo shop </a></p> 
   </div>
-  <div id="fine">
-    <div class="pagine">
-      <p class="pagina">CONSEGNA & RESO</p>
-      <p class="pagina">STORE POLICY</p>
-      <p class="pagina">METODI DI PAGAMENTO</p>
-    </div>
-    <div class="pagine">
-      <p class="pagina">CONTATTI</p>
-      <p class="pagina">Tel: 123-456-7890</p>
-      <p class="pagina">help@explosionbox.com</p>
-    </div>
-    <div class="pagine">
-      <p class="pagina">Facebook</p>
-      <p class="pagina">Instagram</p>
-      <p class="pagina">Pinterest</p>
-    </div>  
-  </div>
+  <div th:replace="fragments/base.html :: pre-fondo"></div>
   <footer th:replace="fragments/base.html :: fondo"></footer>
 </body>
 </html>
