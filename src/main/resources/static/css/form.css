@@ -1,0 +1,37 @@
+body{
+  font-family:'Quicksand', sans-serif;
+}
+
+.top{
+    background:white;
+    text-align:center;
+}
+
+img{
+    height:180px;
+    margin-left:12px;
+    margin-right:12px;
+    margin-bottom:-3px;
+}
+
+h1{
+    text-align: center;
+    font-size:28px;
+    color: #D4BAB0;
+  }
+
+h4{
+    margin-top:-25px;
+    text-align: center;
+  }
+
+p{
+  margin-left: 10px;
+}
+
+footer{
+    background:#999997;
+    color:black;
+    font-size:17px;
+    text-align:center;
+  }
