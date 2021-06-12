@@ -31,30 +31,31 @@ a:hover{
     background-color: #D4BAB0;
     }
 
-h4{
+h3{
     color: #D4BAB0;
     font-family:'Quicksand', sans-serif;
     text-align: center;
     font-size:32px;
 }
 
-section{
-  height: 700px;
+#pagina{
+	margin-top:20px;
+    display:flex;
 }
 
-div.galleria {
-    margin: 5px;
-    float: left;
-    width: 300px;
-  }
-  
-div.galleria img {
-    width: 100%;
-    height: 200%;
-  }
+#foto{
+	width: 500px;
+    height: 500px;
+}
 
-#nome{
-  text-align: center;
+#left{
+    float: left;
+}
+
+#right{
+    float: right;
+    margin-right: 20px;
+    font-family:'Quicksand', sans-serif;
 }
 
 footer{
@@ -62,4 +63,4 @@ footer{
     color:black;
     font-size:17px;
     text-align:center;
-    }
+}
