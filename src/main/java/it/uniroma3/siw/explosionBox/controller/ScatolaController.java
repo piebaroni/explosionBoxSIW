@@ -19,17 +19,17 @@ public class ScatolaController {
 	@Autowired
 	private CardService cardService;
 
-	@RequestMapping(value = "/inVendita", method = RequestMethod.GET)
-	public String getScatole(Model model) {
-		model.addAttribute("scatole", this.service.trovaPerNonOrdinate());
-		return "listaScatole.html";
-	}
-
 	@RequestMapping(value = "/scatola/{id}", method = RequestMethod.GET)
 	public String getScatola(@PathVariable("id") Long id, Model model) {
 		Scatola s = this.service.trovaPerId(id);
 		model.addAttribute("scatola", s);
 		model.addAttribute("cards", this.cardService.trovaPerScatolaId(id));
 		return "scatola.html";
+	}
+	
+	@RequestMapping(value = "/newScatola", method = RequestMethod.GET)
+	public String newScatola(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("scatola", new Scatola());
+		return ""; //nome pagina
 	}
 }

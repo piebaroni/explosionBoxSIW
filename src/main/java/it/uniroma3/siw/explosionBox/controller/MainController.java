@@ -8,26 +8,26 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class MainController {
 	
-	@RequestMapping(value = {"/", "index"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
 	public String index(Model model) {
 			return "index";
 	}
 	
-	@RequestMapping(value = {"/home"}, method = RequestMethod.GET)
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home(Model model) {
 			return "home";
 	}
 	
-	@RequestMapping(value = {"/consegna"}, method = RequestMethod.GET)
+	@RequestMapping(value = "/consegna", method = RequestMethod.GET)
 	public String consegna(Model model) {
 			return "consegna";
 	}
 	
-	@RequestMapping(value = {"/policy"}, method = RequestMethod.GET)
+	@RequestMapping(value = "/policy", method = RequestMethod.GET)
 	public String policy(Model model) {
 			return "policy";
 	}
-	@RequestMapping(value = {"/cookies"}, method = RequestMethod.GET)
+	@RequestMapping(value = "/cookies", method = RequestMethod.GET)
 	public String cookies(Model model) {
 			return "cookies";
 	}

@@ -11,6 +11,5 @@ public interface ScatolaRepository extends CrudRepository<Scatola, Long>{
 	public List<Scatola> findByNome(String nome);
 	
 	public List<Scatola> findByOrdineId(Long id);
-	
-	public List<Scatola> findByOrdineIdIsNull();
+
 }
