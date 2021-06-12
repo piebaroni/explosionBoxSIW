@@ -4,6 +4,12 @@
     font-family:'Quicksand', sans-serif;
    }
   
+.login{
+    margin-top:30px;
+    text-align:right;
+    font-family:'Quicksand', sans-serif;
+}
+
 #linea{
     height:0.7px;
     background:black;

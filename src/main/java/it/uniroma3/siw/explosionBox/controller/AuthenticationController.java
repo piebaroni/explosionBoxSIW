@@ -15,6 +15,7 @@ import it.uniroma3.siw.explosionBox.controller.UtenteValidator;
 import it.uniroma3.siw.explosionBox.model.Credentials;
 import it.uniroma3.siw.explosionBox.model.Utente;
 import it.uniroma3.siw.explosionBox.service.CredentialsService;
+import it.uniroma3.siw.explosionBox.service.UtenteService;
 
 @Controller
 public class AuthenticationController {
@@ -22,6 +23,9 @@ public class AuthenticationController {
 	@Autowired
 	private CredentialsService credentialsService;
 
+	@Autowired
+	private UtenteService utenteService;
+	
 	@Autowired
 	private UtenteValidator utenteValidator;
 
@@ -62,6 +66,7 @@ public class AuthenticationController {
 		this.credentialsValidator.validate(credentials, credentialsBindingResult);
 		if(!userBindingResult.hasErrors() && ! credentialsBindingResult.hasErrors()) {
 			credentials.setUtente(utente);
+			utenteService.saveUtente(utente);
 			credentialsService.saveCredentials(credentials);
 			return "registrationSuccessful.html";
 		}
