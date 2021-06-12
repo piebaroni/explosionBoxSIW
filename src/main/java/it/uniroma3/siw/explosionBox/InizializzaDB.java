@@ -88,16 +88,27 @@ public class InizializzaDB implements ApplicationListener<ContextRefreshedEvent>
 		e8.setLinkFoto("Patente.jpeg");
 		es.inserisci(e8);
 		
-		Utente u = new Utente();
-		u.setNome("nome");
-		u.setCognome("cognome");
+		Utente u1 = new Utente();
+		u1.setNome("nome");
+		u1.setCognome("cognome");
 		
-		Credentials c = new Credentials();
-		c.setUtente(u);
-		c.setUsername("user");
-		c.setPassword("user");
-		c.setRole("DEFAULT");
-		cs.saveCredentials(c);
+		Credentials c1 = new Credentials();
+		c1.setUtente(u1);
+		c1.setUsername("user");
+		c1.setPassword("user");
+		c1.setRole("DEFAULT");
+		cs.saveCredentials(c1);
+		
+		Utente u2 = new Utente();
+		u2.setNome("nome");
+		u2.setCognome("cognome");
+		
+		Credentials c2 = new Credentials();
+		c2.setUtente(u2);
+		c2.setUsername("admin");
+		c2.setPassword("admin");
+		c2.setRole("ADMIN");
+		cs.saveCredentials(c2);
 	}
 
 }
