@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${title}"></title>
+        <link rel="stylesheet" th:href="@{/css/info.css}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+  <body>
+  <div th:replace="fragments/base.html :: header"></div>
+  <p id="titolo">Utilizzo dei cookies </p>  
+  <p id="sottotitolo">Cosa sono i cookies? </p>
+  <p id="testo">I cookies sono stringhe di testo di piccole dimensioni conservate nel personal computer dell’utente quando si visitano determinate pagine su internet.</p>
+  <p id="testo">Per ordinare prodotti sul sito di ExplosionBox, è necessario che i cookies siano abilitati. 
+  Se l’utente non desidera accettare i cookies, potrà comunque navigare sul sito web ed usarlo per finalità di ricerca. Nella maggior parte dei browser, i cookies sono abilitati ed in fondo alla pagina sarà possibile rinvenire le informazioni necessarie per modificare le impostazioni dei cookies sul proprio browser.</p>
+  <p id="testo">I cookies, pertanto, non raccolgono informazioni direttamente identificative dell'utente. Infatti ExplosionBox non può attraverso i cookies risalire a nessuna informazione personale direttamente identificativa (es. nome, cognome) se non fornita direttamente dall’utente stesso. Inoltre, è bene precisare che un altro sito web non può utilizzare un cookie rilasciato dal Sito ExplosionBox  per accedere ad altre informazioni contenute nel computer dell’utente. Una volta salvato nel computer, il cookie può essere letto solo dal sito web che lo ha creato</p>
+  <p id="testo"></p>
+  <p id="sottotitolo">Cookies di navigazione</p>
+  <p id="testo">Questi cookies sono fondamentali per permettere all’utente di muoversi all'interno del sito e per usare le sue funzionalità, quali ad esempio accedere alle aree riservate del sito internet. Senza cookies non possono essere forniti i servizi richiesti, come ad esempio l'acquisto online.</p>
+  <p id="testo">I cookies strettamente necessari sono utilizzati per memorizzare un identificatore univoco al fine di gestire e identificare l'utente, rispetto agli altri utenti che in quel momento stanno visitando il sito, in modo da fornire all'utente un servizio coerente e preciso.</p>
+  <p id="sottotitolo">Performance cookies</p>
+  <p id="testo">Questi cookies possono essere di Piazza Italia o di un proprio partner, di sessione o persistenti, il loro utilizzo è limitato alla performance e al miglioramento del sito internet. Questi cookies non raccolgono informazioni che possono identificare l'utente. Tutte le informazioni raccolte da questi cookies sono aggregate in forma anonima e sono utilizzate solo per migliorare la funzionalità del sito.</p>
+  <p id="sottotitolo">Cookies funzionali</p>
+  <p id="testo">I cookies solitamente sono conseguenti ad un'azione dell'utente, ma possono essere implementati anche nella fornitura di un servizio non esplicitamente richiesto ma offerto all'utente. Possono essere utilizzati anche per evitare che si offra di nuovo a quel dato utente un servizio in precedenza offerto e rifiutato. Inoltre, questi cookies permettono ai sito di ricordare le scelte dell'utente (quali ad esempio nome utente, lingua, paese di origine, etc...). Le informazioni raccolte da questi cookies sono anonime e non possono tracciare il comportamento dell'utente su altri siti.</p>
+  <div th:replace="fragments/base.html :: pre-fondo"></div>
+  <footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

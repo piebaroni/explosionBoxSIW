@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${title}"></title>
+        <link rel="stylesheet" th:href="@{/css/info.css}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+  <body>
+  <div th:replace="fragments/base.html :: header"></div>
+  <p id="titolo">Consegna & Resi </p>  
+  <p id="sottotitolo">Posso fare il cambio?</p>
+  <p id="testo">Si. E’ possibile eseguire il cambio entro 2 giorni, a partire dal ricevimento del pacco presentando la ricevuta di acquisto che riceverai via mail.</p>
+  <p id="sottotitolo"> Posso fare più resi per lo stesso ordine?</p>
+  <p id="testo">Per ogni ordine, è possibile richiedere un solo reso (di uno o più scatole). 
+Prima di inviare la richiesta di reso, assicurati che le scatole scelte siano di tuo gradimento.</p>
+  <p id="sottotitolo">Devo pagare il reso? </p>
+  <p id="testo">Il reso è gratuito.</p>
+  <p id="sottotitolo">Come e quando riceverò l’importo del mio reso? </p>
+  <p id="testo">Una volta approvato il reso, il rimborso verrà eseguito nella stessa modalità con cui hai effettuato il pagamento, entro 14 giorni dalla ricezione del pacco presso i nostri uffici. Se in quel lasso di tempo la carta di credito con la quale hai effettuato l’acquisto 
+  dovesse essere clonata o scaduta ti consigliamo di rivolgerti all' istituto bancario emittente della carta.</p>
+  <p id="sottotitolo">Diritto di recesso </p>
+  <p id="testo"></p>
+  <p id="sottotitolo">Effetti del recesso </p>
+  <p id="testo"></p>
+  <div th:replace="fragments/base.html :: pre-fondo"></div>
+  <footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>
