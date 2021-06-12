@@ -21,7 +21,7 @@ public class ScatolaController {
 
 	@RequestMapping(value = "/inVendita", method = RequestMethod.GET)
 	public String getScatole(Model model) {
-		model.addAttribute("scatole", this.service.findAll());
+		model.addAttribute("scatole", this.service.trovaPerNonOrdinate());
 		return "listaScatole.html";
 	}
 

@@ -19,7 +19,7 @@
                th:href="@{'/card' + '/' + ${card.id}}" 
                th:text="|${card.descrizione}|">descrizione</a>
             </div>
-            <a href = "dipendente.html" th:href="@{'/dipendente' + '/' + ${dipendente.id}}" 
+            <a href = "dipendente.html" th:href="@{'/dipendente' + '/' + ${scatola.dipendente.id}}" 
             th:text="|*{dipendente.nome} *{dipendente.cognome}|">nome e cognome dipendente</a>
         </div>
         <div th:unless="${scatola}">Non esiste</div>

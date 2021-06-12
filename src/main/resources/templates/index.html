@@ -1,49 +1,40 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title th:text="${title}"></title>
-        <link rel="stylesheet" th:href="@{/css/index.css}" />
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-         <div id="login">
-          <a th:href="@{/login}">Accedi</a>
-          <a th:href="@{/register}">Registrati</a>
-        </div>
-  <div class="menu">
-    <a>HOME</a>
-    <a>SHOP</a>
-    <img src="images/logoexplosionBox1.png"/></img>
-    <a>INSPO</a>
-    <a>CONTACT</a>
+<head>
+  <title th:text="${title}"></title>
+  <link rel="stylesheet" th:href="@{/css/index.css}" />
+  <link rel="preconnect" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+  <div id="login">
+    <a th:href="@{/login}">Accedi</a>
+    <a th:href="@{/register}">Registrati</a>
   </div>
-  <div id="linea"></div>
-    
+  <div th:replace="fragments/base.html :: header"></div>  
   <div id=centro>
-  <p id="titolo">EXPLOSION </p>
-   <p id="titolo"> BOX </p> 
-   <p id="bottone" ><a id="bottone2">Visita lo shop </a></p> 
+    <p id="titolo">EXPLOSION </p>
+    <p id="titolo"> BOX </p> 
+    <p id="bottone" ><a id="bottone2" th:href="@{/inVendita}">Visita lo shop </a></p> 
   </div>
-<div id="fine">
-  <div class="pagine">
-    <p class="pagina">CONSEGNA & RESO<p>
-    <p class="pagina">STORE POLICY<p>
-    <p class="pagina">METODI DI PAGAMENTO<p>
+  <div id="fine">
+    <div class="pagine">
+      <p class="pagina">CONSEGNA & RESO</p>
+      <p class="pagina">STORE POLICY</p>
+      <p class="pagina">METODI DI PAGAMENTO</p>
+    </div>
+    <div class="pagine">
+      <p class="pagina">CONTATTI</p>
+      <p class="pagina">Tel: 123-456-7890</p>
+      <p class="pagina">help@explosionbox.com</p>
+    </div>
+    <div class="pagine">
+      <p class="pagina">Facebook</p>
+      <p class="pagina">Instagram</p>
+      <p class="pagina">Pinterest</p>
+    </div>  
   </div>
-  <div class="pagine">
-    <p class="pagina">CONTATTI<p>
-    <p class="pagina">Tel: 123-456-7890<p>
-    <p class="pagina">help@explosionbox.com<p>
-  </div>
-  <div class="pagine">
-    <p class="pagina">Facebook<p>
-    <p class="pagina">Instagram<p>
-    <p class="pagina">Pinterest<p>
-  </div>  
-</div>
-<footer>© 2021 Di Nepi - Baroni. ExplosionBox</footer>
-
+  <footer th:replace="fragments/base.html :: fondo"></footer>
 </body>
 </html>

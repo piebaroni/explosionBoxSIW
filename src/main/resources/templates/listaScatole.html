@@ -2,17 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title th:text="${title}"></title>
-        <link rel="stylesheet" th:href="@{/css/index.css}" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" th:href="@{/css/lista.css}" />
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap" rel="stylesheet"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
     </head>
     <body>
-        <h1>EXPLOSION BOX</h1>
-        <ul>
-			<li th:each="scatola : ${scatole}">
-				<a href = "scatola.html"
-				   th:href="@{'/scatola' + '/' + ${scatola.id}}" 
-				   th:text="${scatola.nome}">Data ordine</a>
-			</li>
-		</ul>
+        <div th:replace="fragments/base.html :: header"></div> 
+        <h4>Disponibili Ora</h4>
+        <section>
+            <div class="galleria" th:each="scatola : ${scatole}">
+                <img th:src="@{/images/{image}(image=${scatola.linkFoto})}">
+                <a class="nome" href = "scatola.html"
+				       th:href="@{'/scatola' + '/' + ${scatola.id}}" 
+			    	   th:text="${scatola.nome}">Nome scatola</a>
+            </div>
+        </section>
+        <footer th:replace="fragments/base.html :: fondo"></footer>
     </body>
 </html> 

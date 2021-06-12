@@ -39,6 +39,8 @@ public class Scatola {
 	@Column(nullable = false)
 	private int numeroFoto;
 	
+	private String linkFoto;
+	
 	@ManyToOne
 	private Dipendente dipendente;
 	
@@ -125,5 +127,21 @@ public class Scatola {
 	public void setCards(List<Card> cards) {
 		this.cards = cards;
 	}
-	
+
+	public String getLinkFoto() {
+		return linkFoto;
+	}
+
+	public void setLinkFoto(String linkFoto) {
+		this.linkFoto = linkFoto;
+	}
+
+	public Ordine getOrdine() {
+		return ordine;
+	}
+
+	public void setOrdine(Ordine ordine) {
+		this.ordine = ordine;
+	}
+
 }
