@@ -10,22 +10,17 @@
 </head>
 <body>
     <div th:replace="fragments/base.html :: header"></div>
-    <div id=centro>
-        <div th:if="${scatola}" th:object="${scatola}">
-            <h3 th:text="|Vuoi ordinare la ${scatola.nome} box?|"></h3>
-            <p id="bottone"><a id="bottone2" th:href="@{'/nuovoOrdine' + '/' + ${scatola.id}}">Prosegui</a></p>
-            <p id="bottone"><a id="bottone2" th:href="@{'/deleteScatola' + '/' + ${scatola.id}}">Indietro</a></p>
-        </div>
-    </div>
+    <p id="sopra"> Ti ringraziamo per il tuo ordine, _________ </p>
+    <p id="sotto"> Verrai presto contattato!</p>
     <div id="riepilogo"> 
-         <p id="scritta">Scatola N.: </p> <p id="scrittad"> 800 </p> 
+         <p id="scritta">Ordine N.: </p> <p id="scrittad"> 800 </p> 
           
           <div id="mini-linea"> </div>
           <p id="scritta">Totale: </p> 
           <p id="scrittad"> $60 </p>
         
           <div id="mini-linea"> </div>
-          <p id="scritta">Colore coperchio:</p>
+          <p id="scritta">Indirizzo:</p>
    </div>
     <div th:unless="${scatola}">Non esiste</div>
     <div th:replace="fragments/base.html :: pre-fondo"></div>

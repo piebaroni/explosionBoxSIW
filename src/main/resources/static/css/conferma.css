@@ -1,4 +1,79 @@
 
+
+
+section{
+	margin-top:20px;
+}
+#sopra{
+	text-align:center;
+	font-family:'Quicksand', sans-serif;
+	font-size: 30px;
+}
+#sotto{
+	text-align: center;
+	font-family:'Quicksand', sans-serif;
+	font-size:27px;
+}
+
+select {
+  font-family:'Quicksand', sans-serif;
+  font-size:10px;
+  width: 100%;
+  padding: 9px 15px;
+  border: 0.7px solid grey; 
+  font-size:16px;
+  width:355px;
+  margin-top:-10px;
+}
+input {
+  font-family:'Quicksand', sans-serif;
+  font-size:16px;
+  width: 100%;
+  padding: 9px 15px;
+  border: 0.7px solid grey;
+  width:325px;
+  margin-top:-10px;
+}
+
+button{
+  color:white;
+  background:black;
+  width:355px;
+  padding: 10px 15px;
+  margin-top:10px;
+  }
+
+
+
+
+td{
+	font-family:'Quicksand', sans-serif;
+  font-weight:bold;
+}
+
+#riepilogo{
+  height:340px;
+  border:solid 5px black;
+  width:690px; 
+  margin:auto;
+  
+  
+}
+#mini-linea{
+  background:lightgrey;
+  height:1px;
+  margin-left:7%;
+  margin-right:7%;
+}
+
+#scrittad{
+ font-family:'Quicksand', sans-serif;
+  font-weight:bold;
+  font-size:20px;
+  margin-top:-40px;
+  text-align:right;
+  margin-right:7%;
+}
 .login{
 	margin-top:30px;
   text-align:right;
@@ -27,24 +102,6 @@
   padding-top:200px;
   font-family: 'Chonburi', cursive;
 }
-
-#titolo{
-  font-size:90px;
-  margin-top:-80px;
-  color:white;
-  text-shadow:-2.5px 0 black ;
-}
-
-#bottone{
-margin-top:-60px;
-}
-
-#bottone2{
- color:black;
-  padding:7px;
-  border:solid 1px;
-}
-
 #linea{
   height:0.7px;
   background:black;
@@ -103,3 +160,12 @@ footer{
   font-size:17px;
   text-align:center;
 }
+#scritta{
+  font-family:'Quicksand', sans-serif;
+  font-weight:bold;
+  font-size:20px;
+  margin-top:45px;
+  margin-right:7%;
+  margin-left:7%;
+}
+

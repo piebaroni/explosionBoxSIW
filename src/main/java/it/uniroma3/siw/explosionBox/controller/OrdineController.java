@@ -86,7 +86,7 @@ public class OrdineController {
 			this.service.inserisci(ordine);
 			model.addAttribute("ordini", this.service.trovaPerCliente(u.getId()));
 			logger.debug("EFFETTUATO ORDINE!!!");
-			return "listaOrdini.html";
+			return "ordineEffettuato.html";
 		}
 		return "ordineForm.html";
 	}
