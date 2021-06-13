@@ -1,4 +1,29 @@
-
+#riepilogo{
+  height:340px;
+  border:solid 5px black;
+  width:690px; 
+  margin:auto;
+  
+  
+}
+#mini-linea{
+  background:lightgrey;
+  height:1px;
+  margin-left:7%;
+  margin-right:7%;
+}
+p{
+  font-weight:bold;
+  font-size:20px;
+  margin-top:45px;
+  margin-right:7%;
+  margin-left:7%;
+}
+#scrittad{
+  margin-top:-40px;
+  text-align:right;
+  margin-right:7%;
+}
 .login{
 	margin-top:30px;
   text-align:right;
@@ -27,24 +52,6 @@
   padding-top:200px;
   font-family: 'Chonburi', cursive;
 }
-
-#titolo{
-  font-size:90px;
-  margin-top:-80px;
-  color:white;
-  text-shadow:-2.5px 0 black ;
-}
-
-#bottone{
-margin-top:-60px;
-}
-
-#bottone2{
- color:black;
-  padding:7px;
-  border:solid 1px;
-}
-
 #linea{
   height:0.7px;
   background:black;

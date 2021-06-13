@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title th:text="${title}"></title>
-    <link rel="stylesheet" th:href="@{/css/index.css}" />
+    <link rel="stylesheet" th:href="@{/css/conferma.css}" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap"
         rel="stylesheet" />
@@ -13,10 +13,20 @@
     <div id=centro>
         <div th:if="${scatola}" th:object="${scatola}">
             <h3 th:text="|Vuoi ordinare la ${scatola.nome} box?|"></h3>
-            <p id="bottone"><a id="bottone2" th:href="@{'/nuovoOrdine' + '/' + ${scatola.id}}">Si</a></p>
-            <p id="bottone"><a id="bottone2" th:href="@{'/deleteScatola' + '/' + ${scatola.id}}">No</a></p>
+            <p id="bottone"><a id="bottone2" th:href="@{'/nuovoOrdine' + '/' + ${scatola.id}}">Prosegui</a></p>
+            <p id="bottone"><a id="bottone2" th:href="@{'/deleteScatola' + '/' + ${scatola.id}}">Indietro</a></p>
         </div>
     </div>
+    <div id="riepilogo"> 
+         <p>Ordine N.: </p> <p id="scrittad"> 800 </p> 
+          
+          <div id="mini-linea"> </div>
+          <p id="scrittas">Totale: </p> 
+          <p id="scrittad"> $60 </p>
+        
+          <div id="mini-linea"> </div>
+          <p>Indirizzo:</p>
+   </div>
     <div th:unless="${scatola}">Non esiste</div>
     <div th:replace="fragments/base.html :: pre-fondo"></div>
     <footer th:replace="fragments/base.html :: fondo"></footer>
