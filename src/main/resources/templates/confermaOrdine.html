@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title th:text="${title}"></title>
     <link rel="stylesheet" th:href="@{/css/conferma.css}" />
@@ -8,25 +9,25 @@
         rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
+
 <body>
     <div th:replace="fragments/base.html :: header"></div>
     <div id=centro>
-        <div th:if="${scatola}" th:object="${scatola}">
-            <h3 th:text="|Vuoi ordinare la ${scatola.nome} box?|"></h3>
-            <p id="bottone"><a id="bottone2" th:href="@{'/nuovoOrdine' + '/' + ${scatola.id}}">Prosegui</a></p>
-            <p id="bottone"><a id="bottone2" th:href="@{'/deleteScatola' + '/' + ${scatola.id}}">Indietro</a></p>
-        </div>
+        <h3 th:text="|Vuoi ordinare la ${scatola.nome} box?|"></h3>
+        <p id="bottone"><a id="bottone2" th:href="@{'/nuovoOrdine' + '/' + ${scatola.id}}">Prosegui</a></p>
+        <p id="bottone"><a id="bottone2" th:href="@{'/deleteScatola' + '/' + ${scatola.id}}">Indietro</a></p>
     </div>
-    <div id="riepilogo"> 
-         <p id="scritta">Scatola N.: </p> <p id="scrittad"> 800 </p> 
-          
-          <div id="mini-linea"> </div>
-          <p id="scritta">Totale: </p> 
-          <p id="scrittad"> $60 </p>
-        
-          <div id="mini-linea"> </div>
-          <p id="scritta">Colore coperchio:</p>
-   </div>
+    <div id="riepilogo">
+        <p id="scritta">Scatola N.: </p>
+        <p id="scrittad" th:text = "${numeroScatole}"></p>
+
+        <div id="mini-linea"> </div>
+        <p id="scritta">Totale: </p>
+        <p id="scrittad" th:text = "| $${scatola.prezzo} |"></p>
+
+        <div id="mini-linea"> </div>
+        <p id="scritta" th:text = "|Colore coperchio: ${scatola.colore1}|"></p>
+    </div>
     <div th:unless="${scatola}">Non esiste</div>
     <div th:replace="fragments/base.html :: pre-fondo"></div>
     <footer th:replace="fragments/base.html :: fondo"></footer>

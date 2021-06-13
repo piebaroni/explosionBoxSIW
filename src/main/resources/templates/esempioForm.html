@@ -2,21 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title th:text="${title}"></title>
-        <link rel="stylesheet" th:href="@{/css/form.css}" />
+        <link rel="stylesheet" th:href="@{/css/conferma.css}" />
         <link rel="preconnect" href="https://fonts.gstatic.com"/>
         <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap" rel="stylesheet"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
     </head>
     <body>
-        <nav class="top">
-            <img src="/images/logoexplosionBox.png"/></img>
-            <h1> Explosion Box </h1> 
-            <h4> Di Nepi-Baroni</h4>
-        </nav>
+        <div th:replace="fragments/base.html :: header"></div>
         <section>
-            <div>
-                <p>Aggiungi un esempio</p>
-            </div>
             <form th:action="@{/newEsempio}" method="POST" th:object="${esempio}">
                 <table>
                     <tr>

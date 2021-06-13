@@ -84,7 +84,10 @@ public class OrdineController {
 			s.setOrdine(ordine);
 			ordine.setScatola(s);
 			this.service.inserisci(ordine);
-			model.addAttribute("ordini", this.service.trovaPerCliente(u.getId()));
+			model.addAttribute("credentials", credentials);
+			model.addAttribute("scatola", s);
+			model.addAttribute("ordine", ordine);
+			model.addAttribute("numeroOrdine", this.service.findAll().size());
 			logger.debug("EFFETTUATO ORDINE!!!");
 			return "ordineEffettuato.html";
 		}

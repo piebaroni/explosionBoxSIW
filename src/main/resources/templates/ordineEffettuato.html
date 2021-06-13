@@ -10,19 +10,18 @@
 </head>
 <body>
     <div th:replace="fragments/base.html :: header"></div>
-    <p id="sopra"> Ti ringraziamo per il tuo ordine, _________ </p>
+    <p id="sopra" th:text="|Ti ringraziamo per il tuo ordine, ${credentials.username} |"></p>
     <p id="sotto"> Verrai presto contattato!</p>
-    <div id="riepilogo"> 
-         <p id="scritta">Ordine N.: </p> <p id="scrittad"> 800 </p> 
+    <div id="riepilogo">
+         <p id="scritta">Ordine N.: </p> <p id="scrittad" th:text = "${numeroOrdine}">  </p> 
           
           <div id="mini-linea"> </div>
           <p id="scritta">Totale: </p> 
-          <p id="scrittad"> $60 </p>
+          <p id="scrittad" th:text="| $${scatola.prezzo} |"></p>
         
           <div id="mini-linea"> </div>
-          <p id="scritta">Indirizzo:</p>
+          <p id="scritta" th:text="|Indirizzo: ${ordine.indirizzo}|"></p>
    </div>
-    <div th:unless="${scatola}">Non esiste</div>
     <div th:replace="fragments/base.html :: pre-fondo"></div>
     <footer th:replace="fragments/base.html :: fondo"></footer>
 </body>

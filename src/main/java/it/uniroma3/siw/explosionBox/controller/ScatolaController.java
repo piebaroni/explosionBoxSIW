@@ -59,6 +59,7 @@ public class ScatolaController {
 			scatola.setNome("Standard");
 			this.service.inserisci(scatola);
 			model.addAttribute("scatola", scatola);
+			model.addAttribute("numeroScatole", this.service.findAll().size());
 			return "confermaOrdine.html";
 		}
 		return "shopStandard.html";
