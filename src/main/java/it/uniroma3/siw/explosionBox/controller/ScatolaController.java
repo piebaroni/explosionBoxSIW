@@ -74,6 +74,7 @@ public class ScatolaController {
 			scatola.setNome("Mini");
 			this.service.inserisci(scatola);
 			model.addAttribute("scatola", scatola);
+			model.addAttribute("numeroScatole", this.service.findAll().size());
 			return "confermaOrdine.html";
 		}
 		return "shopMini.html";
@@ -88,6 +89,7 @@ public class ScatolaController {
 			scatola.setPrezzo(65);
 			this.service.inserisci(scatola);
 			model.addAttribute("scatola", scatola);
+			model.addAttribute("numeroScatole", this.service.findAll().size());
 			return "confermaOrdine.html";
 		}
 		return "shopTower.html";

@@ -1,31 +1,24 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <title th:text="${title}"></title>
   <link rel="stylesheet" th:href="@{/css/index.css}" />
-  <link rel="preconnect" href="https://fonts.gstatic.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap" rel="stylesheet"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap"
+    rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
+
 <body>
-  <div class="login">
-    <a th:href="@{/logout}">Logout</a>
-    <a th:href="@{/admin/ordini}">Ordini</a>
-  </div>
-  <div id="menu">
-    <a class="header" th:href="@{/default}">HOME</a>
-    <a class="header" th:href="@{/newScatola}">SHOP</a>
-    <img src="/images/logoexplosionBox1.png"/>
-    <a class="header"  th:href="@{/esempi}">INSPO</a>
-    <a class="header">CONTACT</a>
-  </div>
-  <div id="linea"></div>
+  <div th:replace="fragments/base.html :: header"></div>
   <div id=centro>
     <p id="titolo">EXPLOSION </p>
-    <p id="titolo"> BOX </p> 
-    <p id="bottone" ><a id="bottone2" th:href="@{/addEsempio}">Aggiungi un esempio</a></p> 
+    <p id="titolo"> BOX </p>
+    <p id="bottone"><a id="bottone2" th:href="@{/addEsempio}">Aggiungi un esempio</a></p>
   </div>
   <div th:replace="fragments/base.html :: pre-fondo"></div>
   <footer th:replace="fragments/base.html :: fondo"></footer>
 </body>
+
 </html>

@@ -1,7 +1,6 @@
 package it.uniroma3.siw.explosionBox.controller;
 
 import java.time.LocalDate;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,17 +41,15 @@ public class OrdineController {
 	private OrdineValidator ordineValidator;
 	
 	@RequestMapping(value = "/ordini", method = RequestMethod.GET)
-	public String getOrdiniUtente(Model model) {
+	public String getOrdini(Model model) {
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		Credentials credentials = credentialsService.getCredentialsByUsername(userDetails.getUsername());
+		if(credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
+			model.addAttribute("ordini", this.service.findAll());
+			return "listaOrdini.html";
+		}
 		Utente u = credentials.getUtente();
 		model.addAttribute("ordini", this.service.trovaPerCliente(u.getId()));
-		return "listaOrdini.html";
-	}
-	
-	@RequestMapping(value = "/admin/ordini", method = RequestMethod.GET)
-	public String getOrdini(Model model) {
-		model.addAttribute("ordini", this.service.findAll());
 		return "listaOrdini.html";
 	}
 	
