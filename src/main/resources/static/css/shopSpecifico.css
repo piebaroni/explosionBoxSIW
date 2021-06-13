@@ -8,7 +8,9 @@
 #sinistra{
  margin-right:30px; 
 }
-
+#destra{
+	margin-top:-35px;
+}
 #titolo{
  font-size:28px;
   font-weight:bold;
@@ -19,12 +21,31 @@ p{
   font-weight:bold;
 }
 select {
-	font-family:'Quicksand', sans-serif;
+  font-family:'Quicksand', sans-serif;
   font-size:10px;
   width: 100%;
-  padding: 16px 20px;
-  border: 1px solid grey;  
+  padding: 9px 15px;
+  border: 0.7px solid grey; 
+  font-size:16px;
+  width:355px;
+  margin-top:-10px;
 }
+input {
+  font-family:'Quicksand', sans-serif;
+  font-size:16px;
+  width: 100%;
+  padding: 9px 15px;
+  border: 0.7px solid grey;
+  width:325px;
+  margin-top:-10px;
+}
+button{
+  color:white;
+  background:black;
+  width:355px;
+  padding: 10px 15px;
+  margin-top:10px;
+  }
 
 #anteprima{
   height:500px;
