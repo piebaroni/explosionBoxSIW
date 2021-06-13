@@ -38,9 +38,11 @@ img{
   text-align: center;
   font-size: medium;
 }
-
-a{
+a.header{
 	color:black;
+}
+a{
+
 	text-decoration: none;
     margin-left: 10px; 
     margin-right: 10px;
@@ -85,10 +87,12 @@ div.galleria img {
   justify-content:center;
 }
 
-#pagina{
-  color: white;
+.pagina{
+	display:block;
+	color:white;
+	 margin-bottom: 10px; 
+  margin-top: 10px;
 }
-
 .pagine{
   font-family: 'Quicksand', sans-serif;
   font-weight:bold;

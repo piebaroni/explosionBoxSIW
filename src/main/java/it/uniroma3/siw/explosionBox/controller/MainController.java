@@ -31,4 +31,21 @@ public class MainController {
 	public String cookies(Model model) {
 			return "cookies";
 	}
+	
+	@RequestMapping(value = "/shop", method = RequestMethod.GET)
+	public String shop(Model model) {
+			return "shop";
+	}
+	@RequestMapping(value = "/shopMini", method = RequestMethod.GET)
+	public String shopMini(Model model) {
+			return "shopMini";
+	}
+	@RequestMapping(value = "/shopStandard", method = RequestMethod.GET)
+	public String shopStandard(Model model) {
+			return "shopStandard";
+	}
+	@RequestMapping(value = "/shopTower", method = RequestMethod.GET)
+	public String shopTower(Model model) {
+			return "shopTower";
+	}
 }
