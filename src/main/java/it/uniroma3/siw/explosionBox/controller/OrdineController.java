@@ -82,7 +82,7 @@ public class OrdineController {
 			ordine.setCompratore(u);
 			Scatola s = this.scatolaService.trovaPerId(this.id);
 			s.setOrdine(ordine);
-			ordine.getScatole().add(s);
+			ordine.setScatola(s);
 			this.service.inserisci(ordine);
 			model.addAttribute("ordini", this.service.trovaPerCliente(u.getId()));
 			logger.debug("EFFETTUATO ORDINE!!!");

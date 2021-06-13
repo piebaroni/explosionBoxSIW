@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title th:text="${title}"></title>
-        <link rel="stylesheet" th:href="@{/css/index.css}" />
-        <link rel="preconnect" href="https://fonts.gstatic.com"/>
-        <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap" rel="stylesheet"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    </head>
-    <body>
-        <div th:replace="fragments/base.html :: header"></div>
-        <ul>
-			<li th:each="ordine : ${ordini}">
-				<a href = "ordine.html"
-				   th:href="@{'/ordine' + '/' + ${ordine.id}}" 
-				   th:text="|Ordine del: ${ordine.data}|">Data ordine</a>
-			</li>
-		</ul>
-        <footer th:replace="fragments/base.html :: fondo"></footer>
-    </body>
-</html> 
+
+<head>
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" th:href="@{/css/index.css}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap"
+        rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+    <a th:href="@{/logout}" class="login">Logout</a>
+    <div id="menu">
+        <a class="header" th:href="@{/default}">HOME</a>
+        <a class="header" th:href="@{/shop}">SHOP</a>
+        <img id="logo" src="/images/logoexplosionBox1.png" /></img>
+        <a class="header" th:href="@{/esempi}">INSPO</a>
+        <a class="header">CONTACT</a>
+    </div>
+    <div id="linea"></div>
+    <ul>
+        <li th:each="ordine : ${ordini}">
+            <a href="ordine.html" th:href="@{'/ordine' + '/' + ${ordine.id}}"
+                th:text="|Ordine del: ${ordine.data}|">Data ordine</a>
+        </li>
+    </ul>
+    <footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+
+</html>

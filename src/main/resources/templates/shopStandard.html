@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <title th:text="${title}"></title>
   <link rel="stylesheet" th:href="@{/css/shopSpecifico.css}" />
-  <link rel="preconnect" href="https://fonts.gstatic.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap" rel="stylesheet"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap"
+    rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
+
 <body>
-  <div th:replace="fragments/base.html :: header"></div>  
+  <div th:replace="fragments/base.html :: header"></div>
   <div id="box">
-  <div id="sinistra">
-  <img id="anteprima" src="/images/Standardbox.jpeg"> </img>
-  <p> DESCRIZIONE PRODOTTO </p>
-  </div>
-  <div id="destra">
-  <p id="titolo"> Standard box</p>
-  <p>  €60 <p>
-  <form>
-  <p for="cars">Numero foto</p>
-<select id="cars" name="cars">
-  <option value="25">25</option>
-  <option value="30">30</option>
-  <option value="35">35</option>
-</select>
-     <p for="cars"> Dediche/Frasi</p>
-<select id="cars" name="cars">
-  <option value="25">25</option>
-  <option value="30">30</option>
-  <option value="35">35</option>
-</select>
-   <p>Note aggiuntive:</p>
-  <input type="text" id="lname" name="lname">
-    </form>
-  </div>
+    <div id="sinistra">
+      <img id="anteprima" src="/images/Standardbox.jpeg"> </img>
+      <p> DESCRIZIONE PRODOTTO </p>
+    </div>
+    <div id="destra">
+      <p id="titolo"> Standard box</p>
+      <p> €60 </p>
+      <form th:action="@{/newScatolaStandard}" method="POST" th:object="${scatola}">
+        <p>Colore coperchio:</p>
+        <input type="text" id="lname" name="lname" placeholder="Colore" th:field="*{colore1}">
+        <p>Colore scatola:</p>
+        <input type="text" id="lname" name="lname" placeholder="Colore" th:field="*{colore2}">
+        <p for="cars">Numero foto</p>
+        <select id="cars" name="cars" th:field="*{numeroFoto}">
+          <option value="25">25</option>
+          <option value="30">30</option>
+          <option value="35">35</option>
+        </select>
+        <p for="cars"> Dediche/Frasi</p>
+        <select id="cars" name="cars" th:field="*{numeroDediche}">
+          <option value="25">25</option>
+          <option value="30">30</option>
+          <option value="35">35</option>
+        </select>
+        <p for="cars"> Decorazione</p>
+        <select id="cars" name="cars" th:field="*{decorazione}">
+          <option value="Coccarda">Coccarda</option>
+          <option value="Fiocco">Fiocco</option>
+        </select>
+        <p>Note aggiuntive:</p>
+        <input type="text" id="lname" name="lname" placeholder="Note" th:field="*{note}"><br>
+        <button type="submit">Ordina</button>
+      </form>
+    </div>
   </div>
   <div th:replace="fragments/base.html :: pre-fondo"></div>
   <footer th:replace="fragments/base.html :: fondo"></footer>
 </body>
+
 </html>

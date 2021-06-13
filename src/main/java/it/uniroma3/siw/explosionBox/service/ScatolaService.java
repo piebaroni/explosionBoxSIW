@@ -35,6 +35,10 @@ public class ScatolaService {
 		return (List<Scatola>) repository.findAll();
 	}
 	
+	public void eliminaScatola(Long id) {
+		this.repository.deleteById(id);
+	}
+	
 	@Transactional
 	public Scatola trovaPerId(Long id) {
 		Optional<Scatola> optional = repository.findById(id);

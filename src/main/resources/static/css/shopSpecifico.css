@@ -8,10 +8,12 @@
 #sinistra{
  margin-right:30px; 
 }
+
 #titolo{
  font-size:28px;
   font-weight:bold;
 }
+
 p{
 	font-family:'Quicksand', sans-serif;
   font-weight:bold;
@@ -21,8 +23,7 @@ select {
   font-size:10px;
   width: 100%;
   padding: 16px 20px;
-  border: 1px solid grey;
-  
+  border: 1px solid grey;  
 }
 
 #anteprima{
@@ -50,7 +51,6 @@ select {
   margin-top:2px;
 }
 
-
 #linea{
   height:0.7px;
   background:black;
@@ -59,20 +59,24 @@ select {
   margin-right:30%;
   margin-top:2px;
 }
+
 .header{
 	color:black;
 }
+
 a{	
 text-decoration: none;
   margin-left: 10px; 
   margin-right: 10px;
 }
+
 .pagina{
 	display:block;
 	color:white;
 	 margin-bottom: 10px; 
   margin-top: 10px;
 }
+
 .pagine{
   font-family: 'Quicksand', sans-serif;
   font-weight:bold;
@@ -100,6 +104,10 @@ a:hover{
   height:150px;
   display:flex;
   justify-content:center;
+}
+
+button{
+  margin-top: 10px;
 }
 
 footer{

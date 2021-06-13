@@ -12,12 +12,10 @@
         <h3 th:text="${scatola.nome}"></h3>
         <div id="pagina">
             <div th:if="${scatola}" th:object="${scatola}">
-                <div id="left">
-                    <img id="foto" th:src="@{/images/{image}(image=${scatola.linkFoto})}">
-                </div>
                 <div id="right">
+                    <h3 th:text="|${scatola.nome} Box|">nome</h3><br>
                     <p th:text="${scatola.dimensione}">dimensione</p><br>
-                    <p th:text="${scatola.descrizione}">descrizione</p><br>
+                    <p th:text="${scatola.decorazione}">decorazione</p><br>
                     <p th:text="${scatola.colore1}">colore1</p><br>
                     <p th:text="${scatola.colore2}">colore2</p><br>
                     <p th:text="${scatola.numeroFoto}">numeroFoto</p><br>
@@ -26,11 +24,8 @@
                         th:href="@{'/card' + '/' + ${card.id}}" 
                         th:text="|${card.descrizione}|">descrizione</a>
                     </div>
-                    <a href = "dipendente.html" th:href="@{'/dipendente' + '/' + ${scatola.dipendente.id}}" 
-                    th:text="|*{dipendente.nome} *{dipendente.cognome}|">nome e cognome dipendente</a>
                 </div>
             </div>
-            <a th:href="@{'/nuovoOrdine' + '/' + ${scatola.id}}">Compra questa scatola</a>
         </div>
         <div th:unless="${scatola}">Non esiste</div>
         <footer th:replace="fragments/base.html :: fondo"></footer>

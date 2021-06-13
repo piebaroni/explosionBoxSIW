@@ -8,13 +8,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Scatola {
 	
 	public static final String DIMENSIONE_PICCOLA = "PICCOLA";
+	public static final String DIMENSIONE_MEDIA = "MEDIA";
 	public static final String DIMENSIONE_GRANDE = "GRANDE";
 	
 	@Id
@@ -23,9 +26,6 @@ public class Scatola {
 	
 	@Column(nullable = false)
 	private String nome;
-	
-	@Column(nullable = false)
-	private String descrizione;
 	
 	@Column(nullable = false)
 	private String dimensione;
@@ -39,12 +39,19 @@ public class Scatola {
 	@Column(nullable = false)
 	private int numeroFoto;
 	
-	private String linkFoto;
+	private int numeroDediche;
+	
+	private String note;
+	
+	private String decorazione;
+	
+	private int prezzo;
 	
 	@ManyToOne
 	private Dipendente dipendente;
 	
-	@ManyToOne
+	@OneToOne
+	@JoinColumn(name = "ordine_id")
 	private Ordine ordine;
 	
 	@OneToMany(mappedBy = "scatola")
@@ -70,14 +77,6 @@ public class Scatola {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public String getDescrizione() {
-		return descrizione;
-	}
-
-	public void setDescrizione(String descrizione) {
-		this.descrizione = descrizione;
 	}
 
 	public String getDimensione() {
@@ -128,14 +127,6 @@ public class Scatola {
 		this.cards = cards;
 	}
 
-	public String getLinkFoto() {
-		return linkFoto;
-	}
-
-	public void setLinkFoto(String linkFoto) {
-		this.linkFoto = linkFoto;
-	}
-
 	public Ordine getOrdine() {
 		return ordine;
 	}
@@ -144,4 +135,35 @@ public class Scatola {
 		this.ordine = ordine;
 	}
 
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	public String getDecorazione() {
+		return decorazione;
+	}
+
+	public void setDecorazione(String decorazione) {
+		this.decorazione = decorazione;
+	}
+
+	public int getPrezzo() {
+		return prezzo;
+	}
+
+	public void setPrezzo(int prezzo) {
+		this.prezzo = prezzo;
+	}
+
+	public int getNumeroDediche() {
+		return numeroDediche;
+	}
+
+	public void setNumeroDediche(int numeroDediche) {
+		this.numeroDediche = numeroDediche;
+	}
 }

@@ -12,7 +12,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import static it.uniroma3.siw.explosionBox.model.Credentials.DEFAULT_ROLE;
 import static it.uniroma3.siw.explosionBox.model.Credentials.ADMIN_ROLE;
 
 @Configuration
@@ -33,9 +32,9 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.GET, "/admin/**").hasAnyAuthority(ADMIN_ROLE)
 		.antMatchers(HttpMethod.POST, "/admin/**").hasAnyAuthority(ADMIN_ROLE)
 		
-		// solo gli utenti autenticati con ruolo DEFAULT possono accedere a risorse con ordine/ordini
-		.antMatchers(HttpMethod.GET, "/ordine/**", "/ordini", "/nuovoOrdine/**").hasAnyAuthority(DEFAULT_ROLE)
-		.antMatchers(HttpMethod.POST, "/faiOrdine").hasAnyAuthority(DEFAULT_ROLE)
+		// solo gli utenti autenticati con ruolo possono accedere a risorse con ordine/ordini
+		.antMatchers(HttpMethod.GET, "/ordine/**", "/ordini", "/nuovoOrdine/**").authenticated()
+		.antMatchers(HttpMethod.POST, "/faiOrdine").authenticated()
 		
 		// tutti gli utenti autenticati possono accere alle pagine rimanenti 
 		.anyRequest().permitAll()
