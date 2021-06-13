@@ -42,11 +42,17 @@ public class OrdineController {
 	private OrdineValidator ordineValidator;
 	
 	@RequestMapping(value = "/ordini", method = RequestMethod.GET)
-	public String getOrdini(Model model) {
+	public String getOrdiniUtente(Model model) {
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		Credentials credentials = credentialsService.getCredentialsByUsername(userDetails.getUsername());
 		Utente u = credentials.getUtente();
 		model.addAttribute("ordini", this.service.trovaPerCliente(u.getId()));
+		return "listaOrdini.html";
+	}
+	
+	@RequestMapping(value = "/admin/ordini", method = RequestMethod.GET)
+	public String getOrdini(Model model) {
+		model.addAttribute("ordini", this.service.findAll());
 		return "listaOrdini.html";
 	}
 	

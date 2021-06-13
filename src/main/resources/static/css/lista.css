@@ -29,13 +29,14 @@ img{
 #titolo{
   font-family:'Quicksand', sans-serif;
   text-align: center;
-
+  font-size: large;
 }
 
 #sottotitolo{
   margin-top: -20px;
   font-family:'Quicksand', sans-serif;
   text-align: center;
+  font-size: medium;
 }
 
 a{
@@ -57,13 +58,13 @@ h4{
 }
 
 section{
-  height: 900px;
+  height: 3000px;
 }
 
 div.galleria {
     margin: 5px;
     float: left;
-    width: 300px;
+    width: 600px;
   }
   
 div.galleria img {
