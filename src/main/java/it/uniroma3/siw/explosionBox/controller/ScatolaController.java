@@ -32,4 +32,5 @@ public class ScatolaController {
 		model.addAttribute("scatola", new Scatola());
 		return ""; //nome pagina
 	}
+	
 }

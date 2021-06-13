@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:text="${title}"></title>
+  <link rel="stylesheet" th:href="@{/css/shop.css}" />
+  <link rel="preconnect" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+  <div th:replace="fragments/base.html :: header"></div>  
+  <div id="elenco">
+    <div id="scatola">
+  <img src="/images/SanValentino.jpeg" id="anteprima">
+  <p id=nome> <a class="shop" th:href="@{/shopMini}">Minibox</a> </p>
+  <div id="mini-linea"> </div>
+  <p id="nome"> €40</p>
+  </div>
+    <div id="scatola">
+<img id="anteprima" src="/images/Standardbox.jpeg"> </img>
+  <p id=nome> <a class="shop" th:href="@{/shopStandard}">Standard box</a> </p>
+  <div id="mini-linea"> </div>
+  <p id="nome"> €60</p>
+  </div>
+    <div id="scatola">
+<img id="anteprima" src="/images/Towerbox.jpeg"> </img>
+  <p id=nome><a class="shop" th:href="@{/shopTower}"> Tower box </a></p>
+  <div id="mini-linea"> </div>
+  <p id="nome"> €65</p>
+  </div>
+  </div>
+  <div th:replace="fragments/base.html :: pre-fondo"></div>
+  <footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>
