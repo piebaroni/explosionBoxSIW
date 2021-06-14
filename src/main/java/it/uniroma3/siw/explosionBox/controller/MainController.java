@@ -36,4 +36,8 @@ public class MainController {
 	public String shop(Model model) {
 			return "shop";
 	}
+	@RequestMapping(value = "/contatti", method = RequestMethod.GET)
+	public String contatti(Model model) {
+			return "contatti";
+	}
 }

@@ -1,0 +1,135 @@
+section{
+    margin: 0 auto;
+    border: 3px solid black;
+    padding:20px;
+    width:350px;
+    
+}
+#titolo{
+  text-align:center;
+  font-family:'Quicksand', sans-serif;
+  font-size: 30px;
+}
+td{
+  display:block;
+  margin-bottom:10px;
+  font-size:14px;
+  margin-left:15px;
+}
+
+form{
+  margin:0 auto;
+}
+input {
+  font-family:'Quicksand', sans-serif;
+  font-size:16px;
+  padding: 9px 15px;
+  border: 0.7px solid grey;
+  width:280px;
+  margin-top:-10px;
+  
+}
+
+button{
+  color:white;
+  background:black;
+  width:310px;
+  padding: 10px 15px;
+  margin-top:10px;
+  font-family:'Quicksand', sans-serif;
+  }
+#reg{
+  font-size:10px;
+  text-align:center;
+  font-family:'Quicksand', sans-serif;
+  display:block;
+}
+
+#pulsante{
+ font-family:'Quicksand', sans-serif;
+  margin:0 auto;
+  text-align:center;
+  border: 1px solid black;
+  padding: 9px 15px;
+  width:360px;
+  font-size:16px; 
+  display:block;
+  text-decoration: none;
+  color:black;
+}
+h2{
+  font-family:'Quicksand', sans-serif;
+  color: #DECBC3;
+  text-align: center;
+  font-size: 40px;
+}
+
+
+td{
+  font-family:'Quicksand', sans-serif;
+  font-weight:bold;
+}
+
+.login{
+	margin-top:30px;
+  text-align:right;
+  font-family:'Quicksand', sans-serif;
+}
+
+#menu{
+  text-align:center;
+  font-size:18px;
+  font-family:'Quicksand', sans-serif;
+ }
+
+ #linea{
+  height:0.7px;
+  background:black;
+  margin-bottom:20px;
+  margin-left:30%;
+  margin-right:30%;
+  margin-top:2px;
+}
+.header{
+	color:black;
+}
+a{
+	
+text-decoration: none;
+  margin-left: 10px; 
+  margin-right: 10px;
+}
+.pagina{
+	display:block;
+	color:white;
+	 margin-bottom: 10px; 
+  margin-top: 10px;
+}
+.pagine{
+  font-family: 'Quicksand', sans-serif;
+  font-weight:bold;
+  font-size: 10px;
+  margin-left:50px;
+  margin-right:50px;
+  margin-top: 50px;
+}
+
+a:hover{
+  background-color: #D4BAB0;
+  }
+  
+  img{
+    height:180px;
+    margin-left:12px;
+    margin-right:12px;
+    margin-bottom:-3px;
+}
+
+
+
+footer{
+  background:#999997;
+  color:black;
+  font-size:17px;
+  text-align:center;
+  margin-top:20px;

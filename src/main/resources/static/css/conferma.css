@@ -10,6 +10,7 @@ section{
 	text-align: center;
 	font-family:'Quicksand', sans-serif;
 	font-size:27px;
+	
 }
 
 select {
@@ -58,6 +59,7 @@ td{
   border:solid 5px black;
   width:690px; 
   margin:auto;
+  
   
   
 }
@@ -133,7 +135,8 @@ text-decoration: none;
   font-size: 10px;
   margin-left:50px;
   margin-right:50px;
-  margin-top: 50px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 a:hover{
@@ -148,7 +151,7 @@ a:hover{
 }
 
 #fine{
-  margin-top:1px;
+  margin-top:10px;
   background:black;
   color:white;
   height:150px;
