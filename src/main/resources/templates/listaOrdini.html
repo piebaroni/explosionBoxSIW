@@ -13,21 +13,29 @@
 <body>
     <a th:href="@{/logout}" class="login">Logout</a>
       <div th:replace="fragments/base.html :: header"></div>
+       <ul>
+       <li th:each="ordine : ${ordini}">
       <div id="ordine">
   <div id="top"> 
     <div id="topinfo">
   <p>ORDINE EFFETUATO IL:</p>
-      <p> data </p>
+      <p th:href="@{'/ordine' + '/' + ${ordine.id}}"
+                th:text="|${ordine.data}|">Data ordine</p>
     </div>
     <div id="topinfo">
       <p>TOTALE</p>
-      <p> $$$$ </p>
+      <p th:href="@{'/ordine' + '/' + ${ordine.id}}"
+                th:text="|${ordine.scatola.prezzo}|">Totale ordine</p>
     </div><div id="topinfo">
       <p>UTENTE</p>
-      <p> $$$$ </p>
+     <p th:href="@{'/ordine' + '/' + ${ordine.id}}"
+                th:text="|${ordine.compratore.nome}|">Utente ordine</p>
     </div>
     <div id="topd">
-      <p>Ordine: #123-4578</p>
+      <p th:href="@{'/ordine' + '/' + ${ordine.id}}"
+                th:text="|${ordine.id}|">Id ordine</p>
+      <p th:href="@{'/ordine' + '/' + ${ordine.id}}"
+                th:text="|${ordine.telefono}|">Telefono utente</p>
     </div>
   </div>
   <div id="sotto">
@@ -42,10 +50,7 @@
     </div>
   </div>
   </div>
-    <ul>
-        <li th:each="ordine : ${ordini}">
-            <a href="ordine.html" th:href="@{'/ordine' + '/' + ${ordine.id}}"
-                th:text="|Ordine del: ${ordine.data}|">Data ordine</a>
+    
         </li>
     </ul>
     <footer th:replace="fragments/base.html :: fondo"></footer>
