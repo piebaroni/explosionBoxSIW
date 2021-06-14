@@ -3,7 +3,7 @@
 
 <head>
     <title th:text="${title}"></title>
-    <link rel="stylesheet" th:href="@{/css/lista.css}" />
+    <link rel="stylesheet" th:href="@{/css/index.css}" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap"
         rel="stylesheet" />
@@ -12,14 +12,36 @@
 
 <body>
     <a th:href="@{/logout}" class="login">Logout</a>
-    <div id="menu">
-        <a class="header" th:href="@{/default}">HOME</a>
-        <a class="header" th:href="@{/shop}">SHOP</a>
-        <img id="logo" src="/images/logoexplosionBox1.png" /></img>
-        <a class="header" th:href="@{/esempi}">INSPO</a>
-        <a class="header">CONTACT</a>
+      <div th:replace="fragments/base.html :: header"></div>
+      <div id="ordine">
+  <div id="top"> 
+    <div id="topinfo">
+  <p>ORDINE EFFETUATO IL:</p>
+      <p> data </p>
     </div>
-    <div id="linea"></div>
+    <div id="topinfo">
+      <p>TOTALE</p>
+      <p> $$$$ </p>
+    </div><div id="topinfo">
+      <p>UTENTE</p>
+      <p> $$$$ </p>
+    </div>
+    <div id="topd">
+      <p>Ordine: #123-4578</p>
+    </div>
+  </div>
+  <div id="sotto">
+  <div id="topinfo">
+  <img src="https://images.emojiterra.com/twitter/v13.0/512px/1f7e5.png">
+  </div><div id="topinfo">
+    <p> NOME SCATOLA </p>
+    </div>
+     <div id="pulsanti">
+    <a>Visualizza Ordine </a>
+    <a>Altro comando </a>
+    </div>
+  </div>
+  </div>
     <ul>
         <li th:each="ordine : ${ordini}">
             <a href="ordine.html" th:href="@{'/ordine' + '/' + ${ordine.id}}"
