@@ -19,8 +19,8 @@ public class ScatolaService {
 		return repository.save(s);
 	}
 	
-	public List<Scatola> trovaPerDipendente(Long id){
-		return repository.findByDipendenteId(id);
+	public List<Scatola> trovaPerDipendenteNullo(){
+		return repository.findByDipendenteIdIsNull();
 	}
 	
 	public List<Scatola> trovaPerNome(String nome){

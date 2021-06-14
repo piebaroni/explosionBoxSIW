@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import it.uniroma3.siw.explosionBox.model.Scatola;
-import it.uniroma3.siw.explosionBox.service.CardService;
+import it.uniroma3.siw.explosionBox.service.DipendenteService;
 import it.uniroma3.siw.explosionBox.service.ScatolaService;
 
 @Controller
@@ -22,13 +22,14 @@ public class ScatolaController {
 	private ScatolaValidator validator;
 	
 	@Autowired
-	private CardService cardService;
+	private DipendenteService dipendenteService;
+
+	private Long id;
 
 	@RequestMapping(value = "/scatola/{id}", method = RequestMethod.GET)
 	public String getScatola(@PathVariable("id") Long id, Model model) {
 		Scatola s = this.service.trovaPerId(id);
 		model.addAttribute("scatola", s);
-		model.addAttribute("cards", this.cardService.trovaPerScatolaId(id));
 		return "scatola.html";
 	}
 
@@ -99,5 +100,20 @@ public class ScatolaController {
 	public String eliminaScatola(@PathVariable("id") Long id, Model model) {
 		this.service.eliminaScatola(id);
 		return "index.html";
+	}
+	
+	@RequestMapping(value = "/assegnaDipendente/{id}", method = RequestMethod.GET)
+	public String assegnaDipendente(@PathVariable("id") Long id, Model model) {
+		this.id= id;
+		model.addAttribute("dipendenti", this.dipendenteService.findAll());
+		return "formDipendenti.html";
+	}
+	
+	@RequestMapping(value = "/assegna/{id}", method = RequestMethod.GET)
+	public String addDipendenteToScatola(@PathVariable("id") Long id, Model model) {
+		Scatola s = this.service.trovaPerId(this.id);
+		s.setDipendente(this.dipendenteService.trovaPerId(id));
+		this.service.inserisci(s);
+		return "admin/home.html";
 	}
 }
