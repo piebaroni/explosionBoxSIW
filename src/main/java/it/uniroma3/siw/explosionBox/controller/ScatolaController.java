@@ -56,6 +56,7 @@ public class ScatolaController {
 		this.validator.validate(scatola, bindingResult);
 		if(!bindingResult.hasErrors()) {
 			scatola.setPrezzo(60);
+			scatola.setLinkFoto("Standardbox.jpeg");
 			scatola.setNome(Scatola.SCATOLA_STANDARD);
 			this.service.inserisci(scatola);
 			model.addAttribute("scatola", scatola);
@@ -71,6 +72,7 @@ public class ScatolaController {
 		if(!bindingResult.hasErrors()) {
 			scatola.setPrezzo(40);
 			scatola.setNome(Scatola.SCATOLA_MINI);
+			scatola.setLinkFoto("SanValentino.jpeg");
 			this.service.inserisci(scatola);
 			model.addAttribute("scatola", scatola);
 			model.addAttribute("numeroScatole", this.service.findAll().size());
@@ -85,6 +87,7 @@ public class ScatolaController {
 		if(!bindingResult.hasErrors()) {
 			scatola.setNome(Scatola.SCATOLA_TOWER);
 			scatola.setPrezzo(65);
+			scatola.setLinkFoto("Towerbox.jpeg");
 			this.service.inserisci(scatola);
 			model.addAttribute("scatola", scatola);
 			model.addAttribute("numeroScatole", this.service.findAll().size());

@@ -1,8 +1,5 @@
 package it.uniroma3.siw.explosionBox.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -38,6 +34,8 @@ public class Scatola {
 	
 	private int numeroDediche;
 	
+	private String linkFoto;
+	
 	private String note;
 	
 	private String decorazione;
@@ -50,13 +48,9 @@ public class Scatola {
 	@OneToOne
 	@JoinColumn(name = "ordine_id")
 	private Ordine ordine;
-	
-	@OneToMany(mappedBy = "scatola")
-	private List<Card> cards;
 
 	/*COSTRUTTORE*/
 	public Scatola() {
-		this.cards = new ArrayList<Card>();
 	}
 	
 	/*GETTERS E SETTERS*/
@@ -108,14 +102,6 @@ public class Scatola {
 		this.dipendente = dipendente;
 	}
 
-	public List<Card> getCards() {
-		return cards;
-	}
-
-	public void setCards(List<Card> cards) {
-		this.cards = cards;
-	}
-
 	public Ordine getOrdine() {
 		return ordine;
 	}
@@ -138,6 +124,14 @@ public class Scatola {
 
 	public void setDecorazione(String decorazione) {
 		this.decorazione = decorazione;
+	}
+
+	public String getLinkFoto() {
+		return linkFoto;
+	}
+
+	public void setLinkFoto(String linkFoto) {
+		this.linkFoto = linkFoto;
 	}
 
 	public int getPrezzo() {
