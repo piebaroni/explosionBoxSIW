@@ -56,6 +56,13 @@ public class OrdineController {
 	@RequestMapping(value = "/ordine/{id}", method = RequestMethod.GET)
 	public String getOrdine(@PathVariable("id") Long id, Model model) {
 		Ordine o = this.service.trovaPerId(id);
+		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		Credentials credentials = credentialsService.getCredentialsByUsername(userDetails.getUsername());
+		if(credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
+			model.addAttribute("ordine", o);
+			model.addAttribute("scatole", this.scatolaService.trovaPerOrdine(id));
+			return "admin/ordine.html";
+		}
 		model.addAttribute("ordine", o);
 		model.addAttribute("scatole", this.scatolaService.trovaPerOrdine(id));
 		return "ordine.html";
