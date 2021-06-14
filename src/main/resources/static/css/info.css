@@ -1,9 +1,19 @@
+#top2{
+  text-align:center;
+  font-family:'Quicksand', sans-serif;
+}
 
+#top{
+  font-size:30px;
+  font-weight:bold;
+  text-align:center;
+  font-family:'Quicksand', sans-serif;
+}
 #titolo{
   font-size: 24px;
   font-weight: bold;
   font-family:'Quicksand', sans-serif;
-	  margin-left:20%;
+  margin-left:20%;
   margin-right:20%;
 }
 #sottotitolo{
