@@ -6,10 +6,10 @@ import it.uniroma3.siw.explosionBox.model.Scatola;
 
 public interface ScatolaRepository extends CrudRepository<Scatola, Long>{
 
-	public List<Scatola> findByDipendenteIdIsNull();
-
 	public List<Scatola> findByNome(String nome);
 	
 	public List<Scatola> findByOrdineId(Long id);
+
+	public List<Scatola> findByDipendenteIdIsNull();
 
 }

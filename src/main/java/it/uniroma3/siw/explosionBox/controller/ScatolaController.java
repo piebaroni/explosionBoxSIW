@@ -55,9 +55,8 @@ public class ScatolaController {
 	public String addScatolaStandard(@ModelAttribute("scatola") Scatola scatola, Model model, BindingResult bindingResult) {
 		this.validator.validate(scatola, bindingResult);
 		if(!bindingResult.hasErrors()) {
-			scatola.setDimensione(Scatola.DIMENSIONE_MEDIA);
 			scatola.setPrezzo(60);
-			scatola.setNome("Standard");
+			scatola.setNome(Scatola.SCATOLA_STANDARD);
 			this.service.inserisci(scatola);
 			model.addAttribute("scatola", scatola);
 			model.addAttribute("numeroScatole", this.service.findAll().size());
@@ -70,9 +69,8 @@ public class ScatolaController {
 	public String addScatolaMini(@ModelAttribute("scatola") Scatola scatola, Model model, BindingResult bindingResult) {
 		this.validator.validate(scatola, bindingResult);
 		if(!bindingResult.hasErrors()) {
-			scatola.setDimensione(Scatola.DIMENSIONE_PICCOLA);
 			scatola.setPrezzo(40);
-			scatola.setNome("Mini");
+			scatola.setNome(Scatola.SCATOLA_MINI);
 			this.service.inserisci(scatola);
 			model.addAttribute("scatola", scatola);
 			model.addAttribute("numeroScatole", this.service.findAll().size());
@@ -85,8 +83,7 @@ public class ScatolaController {
 	public String addScatolaTower(@ModelAttribute("scatola") Scatola scatola, Model model, BindingResult bindingResult) {
 		this.validator.validate(scatola, bindingResult);
 		if(!bindingResult.hasErrors()) {
-			scatola.setDimensione(Scatola.DIMENSIONE_GRANDE);
-			scatola.setNome("Tower");
+			scatola.setNome(Scatola.SCATOLA_TOWER);
 			scatola.setPrezzo(65);
 			this.service.inserisci(scatola);
 			model.addAttribute("scatola", scatola);
@@ -106,7 +103,7 @@ public class ScatolaController {
 	public String assegnaDipendente(@PathVariable("id") Long id, Model model) {
 		this.id= id;
 		model.addAttribute("dipendenti", this.dipendenteService.findAll());
-		return "formDipendenti.html";
+		return "assegnaDipendente.html";
 	}
 	
 	@RequestMapping(value = "/assegna/{id}", method = RequestMethod.GET)

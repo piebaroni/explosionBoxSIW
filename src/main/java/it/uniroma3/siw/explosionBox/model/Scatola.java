@@ -16,9 +16,9 @@ import javax.persistence.OneToOne;
 @Entity
 public class Scatola {
 	
-	public static final String DIMENSIONE_PICCOLA = "PICCOLA";
-	public static final String DIMENSIONE_MEDIA = "MEDIA";
-	public static final String DIMENSIONE_GRANDE = "GRANDE";
+	public static final String SCATOLA_STANDARD = "Standard";
+	public static final String SCATOLA_MINI = "Mini";
+	public static final String SCATOLA_TOWER = "Tower";
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,9 +26,6 @@ public class Scatola {
 	
 	@Column(nullable = false)
 	private String nome;
-	
-	@Column(nullable = false)
-	private String dimensione;
 	
 	@Column(nullable = false)
 	private String colore1;
@@ -77,14 +74,6 @@ public class Scatola {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public String getDimensione() {
-		return dimensione;
-	}
-
-	public void setDimensione(String dimensione) {
-		this.dimensione = dimensione;
 	}
 
 	public String getColore1() {
@@ -166,4 +155,5 @@ public class Scatola {
 	public void setNumeroDediche(int numeroDediche) {
 		this.numeroDediche = numeroDediche;
 	}
+	
 }

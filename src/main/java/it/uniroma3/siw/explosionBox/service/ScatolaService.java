@@ -18,11 +18,7 @@ public class ScatolaService {
 	public Scatola inserisci(Scatola s) {
 		return repository.save(s);
 	}
-	
-	public List<Scatola> trovaPerDipendenteNullo(){
-		return repository.findByDipendenteIdIsNull();
-	}
-	
+
 	public List<Scatola> trovaPerNome(String nome){
 		return repository.findByNome(nome);
 	}
@@ -51,5 +47,9 @@ public class ScatolaService {
 		List<Scatola> opere = repository.findByNome(s.getNome());
 		if(opere.size()>0) return true;
 		return false;
+	}
+
+	public List<Scatola> trovaPerDipendenteNullo() {
+		return this.repository.findByDipendenteIdIsNull();
 	}
 }
