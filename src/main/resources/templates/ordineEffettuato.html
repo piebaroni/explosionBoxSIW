@@ -20,7 +20,12 @@
           <p id="scrittad" th:text="| $${scatola.prezzo} |"></p>
         
           <div id="mini-linea"> </div>
-          <p id="scritta" th:text="|Indirizzo: ${ordine.indirizzo}|"></p>
+          <p id="scritta">Indirizzo: </p> <p id="scrittad" th:text="${ordine.indirizzo}"></p>
+
+          <div id="mini-linea"> </div>
+          <p id="scritta">Recapito telefonico: </p> <p id="scrittad" th:text="${ordine.telefono}"></p>
+
+          <div id="mini-linea"> </div>
    </div>
     <div th:replace="fragments/base.html :: pre-fondo"></div>
     <footer th:replace="fragments/base.html :: fondo"></footer>

@@ -26,9 +26,22 @@
         <p id="scrittad" th:text = "| $${scatola.prezzo} |"></p>
 
         <div id="mini-linea"> </div>
-        <p id="scritta" th:text = "|Colore coperchio: ${scatola.colore1}|"></p>
+        <p id="scritta">Colore coperchio: </p> <p id="scrittad" th:text = "${scatola.colore1}"></p>
+        
+        <div id="mini-linea"> </div>
+        <p id="scritta">Colore scatola: </p> <p id="scrittad" th:text = "${scatola.colore2}"></p>
+
+        <div id="mini-linea"> </div>
+        <p id="scritta">Decorazione: </p> <p id="scrittad" th:text = "${scatola.decorazione}"></p>
+
+        <div id="mini-linea"> </div>
+        <p id="scritta">Numero Foto: </p> <p id="scrittad" th:text = "${scatola.numeroFoto}"></p>
+
+        <div id="mini-linea"> </div>
+        <p id="scritta">Numero Dediche: </p> <p id="scrittad" th:text = "${scatola.numeroDediche}"></p>
+
+        <div id="mini-linea"> </div>
     </div>
-    <div th:unless="${scatola}">Non esiste</div>
     <div th:replace="fragments/base.html :: pre-fondo"></div>
     <footer th:replace="fragments/base.html :: fondo"></footer>
 </body>

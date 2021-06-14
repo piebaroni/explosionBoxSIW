@@ -40,7 +40,12 @@ button{
   margin-top:10px;
   }
 
-
+h2{
+  font-family:'Quicksand', sans-serif;
+  color: #DECBC3;
+  text-align: center;
+  font-size: 40px;
+}
 
 
 td{
@@ -49,7 +54,7 @@ td{
 }
 
 #riepilogo{
-  height:340px;
+  height:auto;
   border:solid 5px black;
   width:690px; 
   margin:auto;
