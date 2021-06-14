@@ -31,12 +31,12 @@ public class ScatolaService {
 		return repository.findByOrdineId(id);
 	}
 	
-	public List<Scatola> trovaPerNonOrdinate() {
-		return repository.findByOrdineIdIsNull();
-	}
-	
 	public List<Scatola> findAll(){
 		return (List<Scatola>) repository.findAll();
+	}
+	
+	public void eliminaScatola(Long id) {
+		this.repository.deleteById(id);
 	}
 	
 	@Transactional

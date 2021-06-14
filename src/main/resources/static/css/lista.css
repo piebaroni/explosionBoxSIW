@@ -26,8 +26,23 @@ img{
     margin-bottom:-3px;
 }
 
-a{
+#titolo{
+  font-family:'Quicksand', sans-serif;
+  text-align: center;
+  font-size: large;
+}
+
+#sottotitolo{
+  margin-top: -20px;
+  font-family:'Quicksand', sans-serif;
+  text-align: center;
+  font-size: medium;
+}
+a.header{
 	color:black;
+}
+a{
+
 	text-decoration: none;
     margin-left: 10px; 
     margin-right: 10px;
@@ -45,13 +60,13 @@ h4{
 }
 
 section{
-  height: 700px;
+  height: 4000px;
 }
 
 div.galleria {
     margin: 5px;
     float: left;
-    width: 300px;
+    width: 600px;
   }
   
 div.galleria img {
@@ -70,6 +85,13 @@ div.galleria img {
   height:150px;
   display:flex;
   justify-content:center;
+}
+
+.pagina{
+	display:block;
+	color:white;
+	 margin-bottom: 10px; 
+  margin-top: 10px;
 }
 .pagine{
   font-family: 'Quicksand', sans-serif;

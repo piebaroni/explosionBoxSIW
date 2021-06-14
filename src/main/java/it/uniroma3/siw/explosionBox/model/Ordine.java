@@ -1,16 +1,13 @@
 package it.uniroma3.siw.explosionBox.model;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -21,8 +18,8 @@ public class Ordine {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@OneToMany(mappedBy = "ordine") 
-	private List<Scatola> scatole;
+	@OneToOne(mappedBy = "ordine")
+	private Scatola scatola;
 
 	@Column(nullable = false)
 	private String indirizzo;
@@ -30,7 +27,7 @@ public class Ordine {
 	@Column(nullable = false)
 	private int telefono;
 	
-	//@Column(nullable = false)
+	@Column(nullable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate data;
 	
@@ -39,7 +36,6 @@ public class Ordine {
 	
 	/*COSTRUTTORE*/
 	public Ordine() {
-		this.scatole = new ArrayList<Scatola>();
 	}
 
 	/*GETTERS E SETTERS*/
@@ -51,12 +47,12 @@ public class Ordine {
 		this.id = id;
 	}
 
-	public List<Scatola> getScatole() {
-		return scatole;
+	public Scatola getScatola() {
+		return scatola;
 	}
 
-	public void setScatole(List<Scatola> scatole) {
-		this.scatole = scatole;
+	public void setScatola(Scatola scatola) {
+		this.scatola = scatola;
 	}
 
 	public String getIndirizzo() {

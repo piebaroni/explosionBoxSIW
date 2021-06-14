@@ -1,52 +1,54 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" 
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head>
-    <title th:text="${title}"></title>
-    <link rel="stylesheet" th:href="@{/css/index.css}" />
-    <link rel="preconnect" href="https://fonts.gstatic.com"/>
-    <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap" rel="stylesheet"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title th:text="${title}"></title>
+  <link rel="stylesheet" th:href="@{/css/index.css}" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap"
+    rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
+
 <body>
-    <div th:fragment="header">
-        <div sec:authorize="!isAuthenticated()" class="login">
-            <a class="header" th:href="@{/login}">Accedi</a>
-            <a class="header" th:href="@{/register}">Registrati</a>
-        </div>
-        <div sec:authorize="isAuthenticated()" class="login">
-            <a th:href="@{/logout}">Logout</a>
-            <a th:href="@{/ordini}">I miei ordini</a>
-        </div>
-        <div id="menu">
-            <a class="header" th:href="@{/index}">HOME</a>
-            <a class="header" th:href="@{/inVendita}">SHOP</a>
-            <img src="/images/logoexplosionBox1.png"/>
-            <a class="header">INSPO</a>
-            <a class="header">CONTACT</a>
-          </div>
-          <div id="linea"></div>
+  <div th:fragment="header">
+    <div sec:authorize="!isAuthenticated()" class="login">
+      <a class="header" th:href="@{/login}">Accedi</a>
+      <a class="header" th:href="@{/register}">Registrati</a>
     </div>
-	<div th:fragment="pre-fondo">
-	  <div id="fine">
-    <div class="pagine">
-      <a class="pagina" th:href="@{/consegna}">CONSEGNA & RESO</a>
-      <a class="pagina"th:href="@{/policy}">STORE POLICY</a>
-      <a class="pagina"th:href="@{/cookies}">UTILIZZO DEI COOKIES</a>
+    <div sec:authorize="isAuthenticated()" class="login">
+      <a th:href="@{/logout}">Logout</a>
+      <a th:href="@{/ordini}">Ordini</a>
     </div>
-    <div class="pagine">
-      <a class="pagina"th:href="@{/logout}">CONTATTI</a>
-      <p class="pagina">TEL: 123-456-7890</p>
-      <p class="pagina">HELP@EXPLOSIONBOX.COM</p>
+    <div id="menu">
+      <a class="header" th:href="@{/default}">HOME</a>
+      <a class="header" th:href="@{/shop}">SHOP</a>
+      <img id="logo" src="/images/logoexplosionBox1.png" /></img>
+      <a class="header" th:href="@{/esempi}">INSPO</a>
+      <a class="header">CONTACT</a>
     </div>
-    <div class="pagine">
-      <p class="pagina">FACEBOOK</p>
-      <p class="pagina">INSTAGRAM</p>
-      <p class="pagina">PINTEREST</p>
-    </div>  
+    <div id="linea"></div>
   </div>
-	</div>
-    <footer th:fragment="fondo">© 2021 Di Nepi - Baroni. ExplosionBox</footer>
+  <div th:fragment="pre-fondo">
+    <div id="fine">
+      <div class="pagine">
+        <a class="pagina" th:href="@{/consegna}">CONSEGNA & RESO</a>
+        <a class="pagina" th:href="@{/policy}">STORE POLICY</a>
+        <a class="pagina" th:href="@{/cookies}">UTILIZZO DEI COOKIES</a>
+      </div>
+      <div class="pagine">
+        <a class="pagina" th:href="@{/logout}">CONTATTI</a>
+        <p class="pagina">TEL: 123-456-7890</p>
+        <p class="pagina">HELP@EXPLOSIONBOX.COM</p>
+      </div>
+      <div class="pagine">
+        <p class="pagina">FACEBOOK</p>
+        <p class="pagina">INSTAGRAM</p>
+        <p class="pagina">PINTEREST</p>
+      </div>
+    </div>
+  </div>
+  <footer th:fragment="fondo">© 2021 Di Nepi - Baroni. ExplosionBox</footer>
 </body>
 
 </html>

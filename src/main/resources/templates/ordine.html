@@ -10,12 +10,8 @@
     <body>
         <div th:replace="fragments/base.html :: header"></div>
         <div th:if="${ordine}" th:object="${ordine}">
-            <div th:each="scatola : ${scatole}">
-                <img th:src="@{/images/{image}(image=${scatola.linkFoto})}">
-                <a href = "scatola.html"
-                th:href="@{'/scatola' + '/' + ${scatola.id}}" 
-                th:text="|${scatola.nome}|">scatola</a>
-            </div>
+            <strong>Oggetto ordinato: </strong><span><a th:text="|*{scatola.nome} Box|"
+                th:href="@{'/scatola' + '/' + *{scatola.id}}">qui-va-nome-scatola</a></span><br>
             <strong>Indirizzo di consegna:</strong><span th:text="*{indirizzo}">qui-va-indirizzo</span><br>
             <strong>Data dell'ordine:</strong><span th:text="*{data}">qui-va-data</span><br>
             <strong>Recapito telefonico:</strong><span th:text="*{telefono}">qui-va-telefono</span><br>

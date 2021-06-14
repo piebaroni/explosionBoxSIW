@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${title}"></title>
+        <link rel="stylesheet" th:href="@{/css/conferma.css}" />
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap" rel="stylesheet"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </head>
+    <body>
+        <div th:replace="fragments/base.html :: header"></div>
+        <section>
+            <form th:action="@{/newEsempio}" method="POST" th:object="${esempio}">
+                <table>
+                    <tr>
+                        <td th:if="${#fields.hasGlobalErrors()}"></td>
+                        <td th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</td>
+                    </tr>
+                    <tr>
+                        <td>Titolo</td>
+                        <td><input type="text" placeholder="titolo"
+                                   th:field="${esempio.titolo}"/></td>
+                        <td th:if="${#fields.hasErrors('titolo')}"
+                            th:errors="${esempio.titolo}" th:style="'color:red'"></td>
+                    </tr>
+                    <tr>
+                        <td>Sottotitolo</td>
+                        <td><input type="text" placeholder="sottotitolo"
+                                   th:field="${esempio.sottotitolo}"/></td>
+                        <td th:if="${#fields.hasErrors('sottotitolo')}"
+                            th:errors="${esempio.sottotitolo}" th:style="'color:red'"></td>
+                    </tr>
+                    <tr>
+                        <td>Link foto</td>
+                        <td><input type="text" placeholder="sottotitolo"
+                                   th:field="${esempio.linkFoto}"/></td>
+                        <td th:if="${#fields.hasErrors('linkFoto')}"
+                            th:errors="${esempio.linkFoto}" th:style="'color:red'"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit">Accedi</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+        <footer th:replace="fragments/base.html :: fondo"></footer>
+    </body>
+</html>

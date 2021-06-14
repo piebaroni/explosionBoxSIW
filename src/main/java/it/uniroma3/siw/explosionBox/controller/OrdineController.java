@@ -1,7 +1,6 @@
 package it.uniroma3.siw.explosionBox.controller;
 
 import java.time.LocalDate;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +44,10 @@ public class OrdineController {
 	public String getOrdini(Model model) {
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		Credentials credentials = credentialsService.getCredentialsByUsername(userDetails.getUsername());
+		if(credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
+			model.addAttribute("ordini", this.service.findAll());
+			return "listaOrdini.html";
+		}
 		Utente u = credentials.getUtente();
 		model.addAttribute("ordini", this.service.trovaPerCliente(u.getId()));
 		return "listaOrdini.html";
@@ -76,11 +79,14 @@ public class OrdineController {
 			ordine.setCompratore(u);
 			Scatola s = this.scatolaService.trovaPerId(this.id);
 			s.setOrdine(ordine);
-			ordine.getScatole().add(s);
+			ordine.setScatola(s);
 			this.service.inserisci(ordine);
-			model.addAttribute("ordini", this.service.trovaPerCliente(u.getId()));
+			model.addAttribute("credentials", credentials);
+			model.addAttribute("scatola", s);
+			model.addAttribute("ordine", ordine);
+			model.addAttribute("numeroOrdine", this.service.findAll().size());
 			logger.debug("EFFETTUATO ORDINE!!!");
-			return "listaOrdini.html";
+			return "ordineEffettuato.html";
 		}
 		return "ordineForm.html";
 	}

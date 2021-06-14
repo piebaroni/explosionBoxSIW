@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" th:href="@{/css/conferma.css}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap"
+        rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+    <div th:replace="fragments/base.html :: header"></div>
+    <div id=centro>
+        <h3 th:text="|Vuoi ordinare la ${scatola.nome} box?|"></h3>
+        <p id="bottone"><a id="bottone2" th:href="@{'/nuovoOrdine' + '/' + ${scatola.id}}">Prosegui</a></p>
+        <p id="bottone"><a id="bottone2" th:href="@{'/deleteScatola' + '/' + ${scatola.id}}">Indietro</a></p>
+    </div>
+    <div id="riepilogo">
+        <p id="scritta">Scatola N.: </p>
+        <p id="scrittad" th:text = "${numeroScatole}"></p>
+
+        <div id="mini-linea"> </div>
+        <p id="scritta">Totale: </p>
+        <p id="scrittad" th:text = "| $${scatola.prezzo} |"></p>
+
+        <div id="mini-linea"> </div>
+        <p id="scritta">Colore coperchio: </p> <p id="scrittad" th:text = "${scatola.colore1}"></p>
+        
+        <div id="mini-linea"> </div>
+        <p id="scritta">Colore scatola: </p> <p id="scrittad" th:text = "${scatola.colore2}"></p>
+
+        <div id="mini-linea"> </div>
+        <p id="scritta">Decorazione: </p> <p id="scrittad" th:text = "${scatola.decorazione}"></p>
+
+        <div id="mini-linea"> </div>
+        <p id="scritta">Numero Foto: </p> <p id="scrittad" th:text = "${scatola.numeroFoto}"></p>
+
+        <div id="mini-linea"> </div>
+        <p id="scritta">Numero Dediche: </p> <p id="scrittad" th:text = "${scatola.numeroDediche}"></p>
+
+        <div id="mini-linea"> </div>
+    </div>
+    <div th:replace="fragments/base.html :: pre-fondo"></div>
+    <footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+
+</html>

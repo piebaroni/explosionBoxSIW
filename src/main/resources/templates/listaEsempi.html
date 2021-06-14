@@ -11,11 +11,10 @@
         <div th:replace="fragments/base.html :: header"></div> 
         <h4>Disponibili Ora</h4>
         <section>
-            <div class="galleria" th:each="scatola : ${scatole}">
-                <img th:src="@{/images/{image}(image=${scatola.linkFoto})}">
-                <a class="nome" href = "scatola.html"
-				       th:href="@{'/scatola' + '/' + ${scatola.id}}" 
-			    	   th:text="${scatola.nome}">Nome scatola</a>
+            <div class="galleria" th:each="esempio : ${esempi}">
+                <img th:src="@{/images/{image}(image=${esempio.linkFoto})}">
+                <p id = "titolo" th:text="${esempio.titolo}"></p><br>
+                <p id = "sottotitolo" th:text="${esempio.sottotitolo}"></p>
             </div>
         </section>
         <div th:replace="fragments/base.html :: pre-fondo"> </div>

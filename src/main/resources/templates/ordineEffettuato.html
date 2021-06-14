@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" th:href="@{/css/conferma.css}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap"
+        rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+    <div th:replace="fragments/base.html :: header"></div>
+    <p id="sopra" th:text="|Ti ringraziamo per il tuo ordine, ${credentials.username} |"></p>
+    <p id="sotto"> Verrai presto contattato!</p>
+    <div id="riepilogo">
+         <p id="scritta">Ordine N.: </p> <p id="scrittad" th:text = "${numeroOrdine}">  </p> 
+          
+          <div id="mini-linea"> </div>
+          <p id="scritta">Totale: </p> 
+          <p id="scrittad" th:text="| $${scatola.prezzo} |"></p>
+        
+          <div id="mini-linea"> </div>
+          <p id="scritta">Indirizzo: </p> <p id="scrittad" th:text="${ordine.indirizzo}"></p>
+
+          <div id="mini-linea"> </div>
+          <p id="scritta">Recapito telefonico: </p> <p id="scrittad" th:text="${ordine.telefono}"></p>
+
+          <div id="mini-linea"> </div>
+   </div>
+    <div th:replace="fragments/base.html :: pre-fondo"></div>
+    <footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+
+</html>
