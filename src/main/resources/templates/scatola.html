@@ -52,7 +52,7 @@
             <p id="scrittad" th:text="|${dipendente.nome} ${dipendente.cognome}|">qui-va-dipendente</p><br>
         </div>
         <div th:unless="${dipendente}">
-            <p id="scritta">Dipendente: </p> <p id="scrittad">Verrà assegnato al più presto un dipendente!!</p><br>
+            <p id="scritta">Dipendente: </p> <p id="scrittad">Verrà assegnato al più presto!!</p><br>
         </div>
     </div>
     <div th:replace="fragments/base.html :: pre-fondo"></div>

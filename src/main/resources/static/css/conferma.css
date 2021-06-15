@@ -2,6 +2,9 @@
 	text-decoration: none;
 	color:black;
 }
+ul{
+  list-style-type: none;
+}
 section{
 	margin-top:20px;
 }
@@ -13,8 +16,20 @@ section{
 #sotto{
 	text-align: center;
 	font-family:'Quicksand', sans-serif;
+	font-size:27px;	
+}
+#titolo{
+	font-family:'Quicksand', sans-serif;
 	font-size:27px;
-	
+	margin-left:20%;
+}
+#dip{
+font-family:'Quicksand', sans-serif;
+	font-size:18px;	
+	color:black;
+	text-decoration: none;
+	margin-left:20%;
+	margin-bottom: 20px;
 }
 
 select {

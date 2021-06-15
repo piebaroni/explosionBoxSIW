@@ -20,7 +20,7 @@ import it.uniroma3.siw.explosionBox.service.OrdineService;
 import it.uniroma3.siw.explosionBox.service.ScatolaService;
 
 @Component
-public class InizializzaDB /*implements ApplicationListener<ContextRefreshedEvent>*/ {
+public class InizializzaDB /*implements ApplicationListener<ContextRefreshedEvent> */{
 
 	@Autowired
 	private EsempioService es;

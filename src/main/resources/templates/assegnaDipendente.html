@@ -12,14 +12,15 @@
 
 <body>
     <div th:replace="fragments/base.html :: header"></div>
-        <h2>Scegli il dipendente</h2>
+        <p id="titolo">Scegli il dipendente</p>
         <ul>
-            <li th:each="dipendente : ${dipendenti}">
-                <a th:href="@{'/assegna' + '/' + ${dipendente.id}}" 
-                th:text="|${dipendente.nome} ${dipendente.cognome}: ${dipendente.matricola}|"></a>
-            </li>
+            <p th:each="dipendente : ${dipendenti}">
+                <a id="dip" th:href="@{'/assegna' + '/' + ${dipendente.id}}" 
+                th:text="|${dipendente.nome} ${dipendente.cognome}: matricola:#${dipendente.matricola}|"></a>
+            </p>
         </ul>
     </section>
+    <footer th:replace="fragments/base.html :: pre-fondo"></footer>
     <footer th:replace="fragments/base.html :: fondo"></footer>
 </body>
 
