@@ -20,7 +20,7 @@ import it.uniroma3.siw.explosionBox.service.OrdineService;
 import it.uniroma3.siw.explosionBox.service.ScatolaService;
 
 @Component
-public class InizializzaDB implements ApplicationListener<ContextRefreshedEvent> {
+public class InizializzaDB /*implements ApplicationListener<ContextRefreshedEvent>*/ {
 
 	@Autowired
 	private EsempioService es;
@@ -156,7 +156,6 @@ public class InizializzaDB implements ApplicationListener<ContextRefreshedEvent>
 		s2.setNote("nessuna");
 		s2.setOrdine(o2);
 		
-		
 		Ordine o3= new Ordine();
 		Scatola s3 = new Scatola();
 		s3.setColore1("Rosso");
@@ -170,23 +169,15 @@ public class InizializzaDB implements ApplicationListener<ContextRefreshedEvent>
 		s3.setNote("nessuna");
 		s3.setOrdine(o3);
 		
-		
-		
-		
 		o1.setCompratore(u1);
 		o1.setData(LocalDate.of(2021, 3, 12));
 		o1.setIndirizzo("Piazza paperino");
 		o1.setTelefono(325681234);
 		
-		
-		
-		
 		o2.setCompratore(u1);
 		o2.setData(LocalDate.of(2021, 3, 12));
 		o2.setIndirizzo("Piazza paperino");
 		o2.setTelefono(325681234);
-		
-		
 		
 		o3.setCompratore(u1);
 		o3.setData(LocalDate.of(2021, 3, 12));
@@ -200,8 +191,7 @@ public class InizializzaDB implements ApplicationListener<ContextRefreshedEvent>
 		csc.inserisci(s2);
 		csc.inserisci(s3);
 		
-		
-		
 	}
+
 
 }
