@@ -23,7 +23,7 @@ public class ScatolaService {
 		return repository.findByNome(nome);
 	}
 	
-	public List<Scatola> trovaPerOrdine(Long id){
+	public Scatola trovaPerOrdine(Long id){
 		return repository.findByOrdineId(id);
 	}
 	

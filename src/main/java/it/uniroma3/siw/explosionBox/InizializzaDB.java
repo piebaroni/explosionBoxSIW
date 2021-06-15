@@ -40,6 +40,16 @@ public class InizializzaDB implements ApplicationListener<ContextRefreshedEvent>
 		d.setTelefono(0606);
 		ds.inserisci(d);
 		
+		Dipendente d1 = new Dipendente();
+		d1.setNome("Luca");
+		d1.setCognome("Verdi");
+		d1.setEmail("verdi@explosionBox.it");
+		d1.setDataNascita(LocalDate.of(1995, 10, 12));
+		d1.setLuogoNascita("Roma");
+		d1.setMatricola(321);
+		d1.setTelefono(0707);
+		ds.inserisci(d1);
+		
 		Esempio e1 = new Esempio();
 		e1.setTitolo("San Valentino");
 		e1.setSottotitolo("sottotitolo");
