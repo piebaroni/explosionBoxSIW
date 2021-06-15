@@ -10,10 +10,14 @@ import org.springframework.stereotype.Component;
 import it.uniroma3.siw.explosionBox.model.Credentials;
 import it.uniroma3.siw.explosionBox.model.Dipendente;
 import it.uniroma3.siw.explosionBox.model.Esempio;
+import it.uniroma3.siw.explosionBox.model.Ordine;
+import it.uniroma3.siw.explosionBox.model.Scatola;
 import it.uniroma3.siw.explosionBox.model.Utente;
 import it.uniroma3.siw.explosionBox.service.CredentialsService;
 import it.uniroma3.siw.explosionBox.service.DipendenteService;
 import it.uniroma3.siw.explosionBox.service.EsempioService;
+import it.uniroma3.siw.explosionBox.service.OrdineService;
+import it.uniroma3.siw.explosionBox.service.ScatolaService;
 
 @Component
 public class InizializzaDB /*implements ApplicationListener<ContextRefreshedEvent>*/ {
@@ -26,7 +30,13 @@ public class InizializzaDB /*implements ApplicationListener<ContextRefreshedEven
 	
 	@Autowired
 	private CredentialsService cs;
-	/*
+	
+	@Autowired
+	private OrdineService co;
+	
+	@Autowired
+	private ScatolaService csc;
+	
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
 		
@@ -119,6 +129,69 @@ public class InizializzaDB /*implements ApplicationListener<ContextRefreshedEven
 		c2.setPassword("admin");
 		c2.setRole("ADMIN");
 		cs.saveCredentials(c2);
-	}*/
+		
+		Ordine o1= new Ordine();
+		Scatola s1 = new Scatola();
+		s1.setColore1("Rosso");
+		s1.setColore2("Giallo");
+		s1.setPrezzo(60);
+		s1.setLinkFoto("Standardbox.jpeg");
+		s1.setNome(Scatola.SCATOLA_STANDARD);
+		s1.setDecorazione("Fiocco");
+		s1.setNumeroDediche(8);
+		s1.setNumeroFoto(20);
+		s1.setNote("nessuna");
+		s1.setOrdine(o1);
+		
+		Ordine o2= new Ordine();
+		Scatola s2 = new Scatola();
+		s2.setColore1("Rosso");
+		s2.setColore2("Giallo");
+		s2.setPrezzo(40);
+		s2.setNome(Scatola.SCATOLA_MINI);
+		s2.setLinkFoto("SanValentino.jpeg");
+		s2.setDecorazione("Fiocco");
+		s2.setNumeroDediche(2);
+		s2.setNumeroFoto(5);
+		s2.setNote("nessuna");
+		s2.setOrdine(o2);
+		
+		Ordine o3= new Ordine();
+		Scatola s3 = new Scatola();
+		s3.setColore1("Rosso");
+		s3.setColore2("Giallo");
+		s3.setNome(Scatola.SCATOLA_TOWER);
+		s3.setPrezzo(65);
+		s3.setLinkFoto("Towerbox.jpeg");
+		s3.setDecorazione("Fiocco");
+		s3.setNumeroDediche(10);
+		s3.setNumeroFoto(40);
+		s3.setNote("nessuna");
+		s3.setOrdine(o3);
+		
+		o1.setCompratore(u1);
+		o1.setData(LocalDate.of(2021, 3, 12));
+		o1.setIndirizzo("Piazza paperino");
+		o1.setTelefono(325681234);
+		
+		o2.setCompratore(u1);
+		o2.setData(LocalDate.of(2021, 3, 12));
+		o2.setIndirizzo("Piazza paperino");
+		o2.setTelefono(325681234);
+		
+		o3.setCompratore(u1);
+		o3.setData(LocalDate.of(2021, 3, 12));
+		o3.setIndirizzo("Piazza paperino");
+		o3.setTelefono(325681234);
+		
+		co.inserisci(o1);
+		co.inserisci(o2);
+		co.inserisci(o3);
+		csc.inserisci(s1);
+		csc.inserisci(s2);
+		csc.inserisci(s3);
+		
+	}
+
 
 }

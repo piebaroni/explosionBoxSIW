@@ -1,13 +1,16 @@
+body{
+	text-decoration: none;
+}
 #ordine{
   margin:0 auto;
   height:230px;
   border: solid 1px black;
   font-size:13px;
-  width:500px;
+  width:600px;
   font-family:'Quicksand', sans-serif;
 }
 #top{
-  background:lightgrey;
+  background:#DECBC3;
   height:70px;
   border: solid 1px black;
   display:flex;
@@ -27,7 +30,7 @@
   display:flex;
 }
 #pulsanti{
-  margin-left:100px;
+  margin-left:140px;
 }
 #pulsanti a{
   text-align:center;
@@ -35,6 +38,8 @@
   margin:10px;
   border:solid 1px black;
   padding: 5px 10px;
+  text-decoration: none;
+  color:black;
 }
 
 ul{
@@ -49,6 +54,9 @@ li{
 	margin-top:30px;
   text-align:right;
   font-family:'Quicksand', sans-serif;
+}
+.login a{
+	color:black;
 }
 
 #menu{

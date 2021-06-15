@@ -9,6 +9,10 @@
     text-align:right;
     font-family:'Quicksand', sans-serif;
 }
+.login a{
+	color:black;
+	text-decoration: none;
+}
 
 #linea{
     height:0.7px;
