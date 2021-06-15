@@ -16,7 +16,7 @@ import it.uniroma3.siw.explosionBox.service.DipendenteService;
 import it.uniroma3.siw.explosionBox.service.EsempioService;
 
 @Component
-public class InizializzaDB implements ApplicationListener<ContextRefreshedEvent> {
+public class InizializzaDB /*implements ApplicationListener<ContextRefreshedEvent>*/ {
 
 	@Autowired
 	private EsempioService es;
@@ -26,7 +26,7 @@ public class InizializzaDB implements ApplicationListener<ContextRefreshedEvent>
 	
 	@Autowired
 	private CredentialsService cs;
-	
+	/*
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
 		
@@ -119,6 +119,6 @@ public class InizializzaDB implements ApplicationListener<ContextRefreshedEvent>
 		c2.setPassword("admin");
 		c2.setRole("ADMIN");
 		cs.saveCredentials(c2);
-	}
+	}*/
 
 }
