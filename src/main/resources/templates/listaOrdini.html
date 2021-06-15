@@ -25,7 +25,7 @@
     <div id="topinfo">
       <p>TOTALE</p>
       <p th:href="@{'/ordine' + '/' + ${ordine.id}}"
-                th:text="|${ordine.scatola.prezzo}|">Totale ordine</p>
+                th:text="|€${ordine.scatola.prezzo}|">Totale ordine</p>
     </div><div id="topinfo">
       <p>UTENTE</p>
      <p th:href="@{'/ordine' + '/' + ${ordine.id}}"
@@ -33,16 +33,19 @@
     </div>
     <div id="topd">
       <p th:href="@{'/ordine' + '/' + ${ordine.id}}"
-                th:text="|${ordine.id}|">Id ordine</p>
+                th:text="|Ordine N.: #${ordine.id}|">Id ordine</p>
       <p th:href="@{'/ordine' + '/' + ${ordine.id}}"
-                th:text="|${ordine.telefono}|">Telefono utente</p>
+                th:text="|Tel:${ordine.telefono}|">Telefono utente</p>
     </div>
   </div>
   <div id="sotto">
   <div id="topinfo">
   <img src="https://images.emojiterra.com/twitter/v13.0/512px/1f7e5.png">
   </div><div id="topinfo">
-    <p> NOME SCATOLA </p>
+    <p th:href="@{'/ordine' + '/' + ${ordine.id}}"
+                th:text="|Tel:${ordine.scatola.nome}|">Nome scatola</p>
+                <p th:href="@{'/ordine'+'/'+'${ordine.id}}"
+                th:text="|Indirizzo:${ordine.indirizzo}|">Indirizzo </p>
     </div>
      <div id="pulsanti">
     <a>Visualizza Ordine </a>
