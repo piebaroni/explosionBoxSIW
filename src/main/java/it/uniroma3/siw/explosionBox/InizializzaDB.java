@@ -172,7 +172,7 @@ public class InizializzaDB implements ApplicationListener<ContextRefreshedEvent>
 		
 		
 		
-		o1.setScatola(s1);
+		
 		o1.setCompratore(u1);
 		o1.setData(LocalDate.of(2021, 3, 12));
 		o1.setIndirizzo("Piazza paperino");
@@ -180,14 +180,14 @@ public class InizializzaDB implements ApplicationListener<ContextRefreshedEvent>
 		
 		
 		
-		o2.setScatola(s2);
+		
 		o2.setCompratore(u1);
 		o2.setData(LocalDate.of(2021, 3, 12));
 		o2.setIndirizzo("Piazza paperino");
 		o2.setTelefono(325681234);
 		
 		
-		o3.setScatola(s3);
+		
 		o3.setCompratore(u1);
 		o3.setData(LocalDate.of(2021, 3, 12));
 		o3.setIndirizzo("Piazza paperino");
