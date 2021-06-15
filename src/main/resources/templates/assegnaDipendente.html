@@ -16,7 +16,7 @@
         <ul>
             <li th:each="dipendente : ${dipendenti}">
                 <a th:href="@{'/assegna' + '/' + ${dipendente.id}}" 
-                th:text="|${dipendente.nome} ${dipendente.cognome}: ${dipendente.id}|"></a>
+                th:text="|${dipendente.nome} ${dipendente.cognome}: ${dipendente.matricola}|"></a>
             </li>
         </ul>
     </section>

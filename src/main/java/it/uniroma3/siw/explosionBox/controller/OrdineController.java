@@ -1,9 +1,6 @@
 package it.uniroma3.siw.explosionBox.controller;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,13 +45,8 @@ public class OrdineController {
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		Credentials credentials = credentialsService.getCredentialsByUsername(userDetails.getUsername());
 		if(credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
-			List<Scatola> scatole = this.scatolaService.trovaPerDipendenteNullo();
-			List<Ordine> ordini = new ArrayList<Ordine>();
-			for(Scatola scatola: scatole) {
-				ordini.add(scatola.getOrdine());
-			}
-			model.addAttribute("ordini", ordini);
-			return "listaOrdini.html";
+			model.addAttribute("ordini", this.service.findAll());
+			return "admin/listaOrdini.html";
 		}
 		Utente u = credentials.getUtente();
 		model.addAttribute("ordini", this.service.trovaPerCliente(u.getId()));
@@ -64,15 +56,10 @@ public class OrdineController {
 	@RequestMapping(value = "/ordine/{id}", method = RequestMethod.GET)
 	public String getOrdine(@PathVariable("id") Long id, Model model) {
 		Ordine o = this.service.trovaPerId(id);
-		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		Credentials credentials = credentialsService.getCredentialsByUsername(userDetails.getUsername());
-		if(credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
-			model.addAttribute("ordine", o);
-			model.addAttribute("scatole", this.scatolaService.trovaPerOrdine(id));
-			return "admin/ordine.html";
-		}
+		Scatola s = o.getScatola();
 		model.addAttribute("ordine", o);
-		model.addAttribute("scatole", this.scatolaService.trovaPerOrdine(id));
+		model.addAttribute("dipendente", s.getDipendente());
+		model.addAttribute("scatola", s);
 		return "ordine.html";
 	}
 	
