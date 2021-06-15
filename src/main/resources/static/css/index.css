@@ -1,3 +1,56 @@
+#ordine{
+  margin:0 auto;
+  height:230px;
+  border: solid 1px black;
+  font-size:13px;
+  width:500px;
+  font-family:'Quicksand', sans-serif;
+}
+#top{
+  background:lightgrey;
+  height:70px;
+  border: solid 1px black;
+  display:flex;
+}
+#topinfo{
+ flex-grow:0.1;
+ margin-left:10px;
+}
+#topd{
+  margin-left:90px;
+}
+#topinfo img{
+  height:100px;
+}
+#sotto{
+  margin-top:30px;
+  display:flex;
+}
+#pulsanti{
+  margin-left:100px;
+}
+#pulsanti a{
+  text-align:center;
+  display:block;
+  margin:10px;
+  border:solid 1px black;
+  padding: 5px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .login{
 	margin-top:30px;

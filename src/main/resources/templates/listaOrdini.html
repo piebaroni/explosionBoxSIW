@@ -3,7 +3,7 @@
 
 <head>
     <title th:text="${title}"></title>
-    <link rel="stylesheet" th:href="@{/css/lista.css}" />
+    <link rel="stylesheet" th:href="@{/css/index.css}" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap"
         rel="stylesheet" />
@@ -12,18 +12,45 @@
 
 <body>
     <a th:href="@{/logout}" class="login">Logout</a>
-    <div id="menu">
-        <a class="header" th:href="@{/default}">HOME</a>
-        <a class="header" th:href="@{/shop}">SHOP</a>
-        <img id="logo" src="/images/logoexplosionBox1.png" /></img>
-        <a class="header" th:href="@{/esempi}">INSPO</a>
-        <a class="header">CONTACT</a>
+      <div th:replace="fragments/base.html :: header"></div>
+       <ul>
+       <li th:each="ordine : ${ordini}">
+      <div id="ordine">
+  <div id="top"> 
+    <div id="topinfo">
+  <p>ORDINE EFFETUATO IL:</p>
+      <p th:href="@{'/ordine' + '/' + ${ordine.id}}"
+                th:text="|${ordine.data}|">Data ordine</p>
     </div>
-    <div id="linea"></div>
-    <ul>
-        <li th:each="ordine : ${ordini}">
-            <a href="ordine.html" th:href="@{'/ordine' + '/' + ${ordine.id}}"
-                th:text="|Ordine del: ${ordine.data}|">Data ordine</a>
+    <div id="topinfo">
+      <p>TOTALE</p>
+      <p th:href="@{'/ordine' + '/' + ${ordine.id}}"
+                th:text="|${ordine.scatola.prezzo}|">Totale ordine</p>
+    </div><div id="topinfo">
+      <p>UTENTE</p>
+     <p th:href="@{'/ordine' + '/' + ${ordine.id}}"
+                th:text="|${ordine.compratore.nome}|">Utente ordine</p>
+    </div>
+    <div id="topd">
+      <p th:href="@{'/ordine' + '/' + ${ordine.id}}"
+                th:text="|${ordine.id}|">Id ordine</p>
+      <p th:href="@{'/ordine' + '/' + ${ordine.id}}"
+                th:text="|${ordine.telefono}|">Telefono utente</p>
+    </div>
+  </div>
+  <div id="sotto">
+  <div id="topinfo">
+  <img src="https://images.emojiterra.com/twitter/v13.0/512px/1f7e5.png">
+  </div><div id="topinfo">
+    <p> NOME SCATOLA </p>
+    </div>
+     <div id="pulsanti">
+    <a>Visualizza Ordine </a>
+    <a>Altro comando </a>
+    </div>
+  </div>
+  </div>
+    
         </li>
     </ul>
     <footer th:replace="fragments/base.html :: fondo"></footer>
