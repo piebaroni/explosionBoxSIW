@@ -22,14 +22,15 @@
           </div>
           <div id="topinfo">
             <p>TOTALE</p>
-            <p th:text="|${ordine.scatola.prezzo}|">Totale ordine</p>
+            <p th:text="|€${ordine.scatola.prezzo}|">Totale ordine</p>
           </div>
           <div id="topinfo">
             <p>UTENTE</p>
             <p th:text="|${ordine.compratore.nome}|">Utente ordine</p>
           </div>
           <div id="topd">
-            <p th:text="|${ordine.telefono}|">Telefono utente</p>
+            <p th:text="|Ordine: #${ordine.id}|">Numero ordine</p>
+            <p th:text="|Tel:${ordine.telefono}|">Telefono utente</p>
           </div>
         </div>
         <div id="sotto">
@@ -38,15 +39,17 @@
           </div>
           <div id="topinfo">
             <p th:text = "| ${ordine.scatola.nome} Box |" ></p>
+  			<p th:text="|Indirizzo:${ordine.indirizzo}|">Indirizzo ordine</p>
           </div>
           <div id="pulsanti">
             <a th:href="@{'/ordine' + '/' + ${ordine.id}}">Visualizza Ordine </a>
           </div>
         </div>
       </div>
-
+	
     </li>
   </ul>
+  <div th:replace="fragments/base.html :: pre-fondo"></div>
   <footer th:replace="fragments/base.html :: fondo"></footer>
 </body>
 

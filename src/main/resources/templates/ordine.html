@@ -27,6 +27,7 @@
         </div>
     </div>
     <div th:unless="${ordine}">Non esiste</div>
+    <div th:replace="fragments/base.html :: pre-fondo"></div>
     <footer th:replace="fragments/base.html :: fondo"></footer>
 </body>
 
