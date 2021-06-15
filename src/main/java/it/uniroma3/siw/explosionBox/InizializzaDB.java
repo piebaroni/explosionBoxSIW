@@ -130,6 +130,7 @@ public class InizializzaDB implements ApplicationListener<ContextRefreshedEvent>
 		c2.setRole("ADMIN");
 		cs.saveCredentials(c2);
 		
+		Ordine o1= new Ordine();
 		Scatola s1 = new Scatola();
 		s1.setColore1("Rosso");
 		s1.setColore2("Giallo");
@@ -140,12 +141,12 @@ public class InizializzaDB implements ApplicationListener<ContextRefreshedEvent>
 		s1.setNumeroDediche(8);
 		s1.setNumeroFoto(20);
 		s1.setNote("nessuna");
-		csc.inserisci(s1);
+		s1.setOrdine(o1);
 		
+		Ordine o2= new Ordine();
 		Scatola s2 = new Scatola();
 		s2.setColore1("Rosso");
 		s2.setColore2("Giallo");
-		s2.setPrezzo(60);
 		s2.setPrezzo(40);
 		s2.setNome(Scatola.SCATOLA_MINI);
 		s2.setLinkFoto("SanValentino.jpeg");
@@ -153,8 +154,10 @@ public class InizializzaDB implements ApplicationListener<ContextRefreshedEvent>
 		s2.setNumeroDediche(2);
 		s2.setNumeroFoto(5);
 		s2.setNote("nessuna");
-		csc.inserisci(s2);
+		s2.setOrdine(o2);
 		
+		
+		Ordine o3= new Ordine();
 		Scatola s3 = new Scatola();
 		s3.setColore1("Rosso");
 		s3.setColore2("Giallo");
@@ -165,31 +168,39 @@ public class InizializzaDB implements ApplicationListener<ContextRefreshedEvent>
 		s3.setNumeroDediche(10);
 		s3.setNumeroFoto(40);
 		s3.setNote("nessuna");
-		csc.inserisci(s3);
+		s3.setOrdine(o3);
 		
-		Ordine o1= new Ordine();
+		
+		
 		o1.setScatola(s1);
 		o1.setCompratore(u1);
 		o1.setData(LocalDate.of(2021, 3, 12));
 		o1.setIndirizzo("Piazza paperino");
 		o1.setTelefono(325681234);
-		co.inserisci(o1);
 		
-		Ordine o2= new Ordine();
+		
+		
 		o2.setScatola(s2);
 		o2.setCompratore(u1);
 		o2.setData(LocalDate.of(2021, 3, 12));
 		o2.setIndirizzo("Piazza paperino");
 		o2.setTelefono(325681234);
-		co.inserisci(o2);
 		
-		Ordine o3= new Ordine();
+		
 		o3.setScatola(s3);
 		o3.setCompratore(u1);
 		o3.setData(LocalDate.of(2021, 3, 12));
 		o3.setIndirizzo("Piazza paperino");
 		o3.setTelefono(325681234);
+		
+		co.inserisci(o1);
+		co.inserisci(o2);
 		co.inserisci(o3);
+		csc.inserisci(s1);
+		csc.inserisci(s2);
+		csc.inserisci(s3);
+		
+		
 		
 	}
 
