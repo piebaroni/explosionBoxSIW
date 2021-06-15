@@ -1,54 +1,62 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title th:text="#{pageTitle.scatola}"></title>
-        <link rel="stylesheet" th:href="@{/css/conferma.css}" />
-        <link rel="preconnect" href="https://fonts.gstatic.com"/>
-        <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap" rel="stylesheet"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    </head>
 
-    <body>
-        <div th:replace="fragments/base.html :: header"></div>
-        <h2 th:text = "|${scatola.nome} Box|"></h2>
-        <div id="riepilogo">
+<head>
+    <title th:text="#{pageTitle.scatola}"></title>
+    <link rel="stylesheet" th:href="@{/css/conferma.css}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap"
+        rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
 
-            <p id="scritta">Totale: </p>
-            <p id="scrittad" th:text = "| €${scatola.prezzo} |"></p>
-    
-            <div id="mini-linea"> </div>
-            <p id="scritta">Colore coperchio: </p> <p id="scrittad" th:text = "${scatola.colore1}"></p>
-            
-            <div id="mini-linea"> </div>
-            <p id="scritta">Colore scatola: </p> <p id="scrittad" th:text = "${scatola.colore2}"></p>
-    
-            <div id="mini-linea"> </div>
-            <p id="scritta">Decorazione: </p> <p id="scrittad" th:text = "${scatola.decorazione}"></p>
-    
-            <div id="mini-linea"> </div>
-            <p id="scritta">Numero Foto: </p> <p id="scrittad" th:text = "${scatola.numeroFoto}"></p>
-    
-            <div id="mini-linea"> </div>
-            <p id="scritta">Numero Dediche: </p> <p id="scrittad" th:text = "${scatola.numeroDediche}"></p>
-            <div id="mini-linea"> </div>
-            <div th:if="${scatola.note}" th:object="${scatola.note}">
-            <p id="scritta">Note:</p><p id="scrittad"
-                th:text="|${scatola.note}|">qui-va-note</span><br>
+<body>
+    <div th:replace="fragments/base.html :: header"></div>
+    <h2 th:text="|${scatola.nome} Box|"></h2>
+    <div id="riepilogo">
+
+        <p id="scritta">Totale: </p>
+        <p id="scrittad" th:text="| €${scatola.prezzo} |"></p>
+
+        <div id="mini-linea"> </div>
+        <p id="scritta">Colore coperchio: </p>
+        <p id="scrittad" th:text="${scatola.colore1}"></p>
+
+        <div id="mini-linea"> </div>
+        <p id="scritta">Colore scatola: </p>
+        <p id="scrittad" th:text="${scatola.colore2}"></p>
+
+        <div id="mini-linea"> </div>
+        <p id="scritta">Decorazione: </p>
+        <p id="scrittad" th:text="${scatola.decorazione}"></p>
+
+        <div id="mini-linea"> </div>
+        <p id="scritta">Numero Foto: </p>
+        <p id="scrittad" th:text="${scatola.numeroFoto}"></p>
+
+        <div id="mini-linea"> </div>
+        <p id="scritta">Numero Dediche: </p>
+        <p id="scrittad" th:text="${scatola.numeroDediche}"></p>
+        <div id="mini-linea"> </div>
+        <div th:if="${scatola.note}" th:object="${scatola.note}">
+            <p id="scritta">Note:</p>
+            <p id="scrittad" th:text="|${scatola.note}|">qui-va-note</span><br>
         </div>
         <div th:unless="${scatola.note}">
             <p id="scritta">Note:</p><br>
         </div>
-    
-            <div id="mini-linea"> </div>
-            <div th:if="${dipendente}" th:object="${dipendente}">
-            <p id="scritta">Dipendente:</p><p id="scrittad"
-                th:text="|${dipendente.nome} ${dipendente.cognome}|">qui-va-dipendente</span><br>
+
+        <div id="mini-linea"> </div>
+        <div th:if="${dipendente}" th:object="${dipendente}">
+            <p id="scritta">Dipendente:</p>
+            <p id="scrittad" th:text="|${dipendente.nome} ${dipendente.cognome}|">qui-va-dipendente</p><br>
         </div>
         <div th:unless="${dipendente}">
-            <p id="scritta">Dipendente:</p><br>
+            <p id="scritta">Dipendente: </p> <p id="scrittad">Verrà assegnato al più presto un dipendente!!</p><br>
         </div>
-        </div>
-        <div th:replace="fragments/base.html :: pre-fondo"></div>
-        <footer th:replace="fragments/base.html :: fondo"></footer>
-    </body>
-</html> 
+    </div>
+    <div th:replace="fragments/base.html :: pre-fondo"></div>
+    <footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+
+</html>

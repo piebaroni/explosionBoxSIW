@@ -53,16 +53,6 @@ public class OrdineController {
 		return "listaOrdini.html";
 	}
 	
-	@RequestMapping(value = "/ordine/{id}", method = RequestMethod.GET)
-	public String getOrdine(@PathVariable("id") Long id, Model model) {
-		Ordine o = this.service.trovaPerId(id);
-		Scatola s = o.getScatola();
-		model.addAttribute("ordine", o);
-		model.addAttribute("dipendente", s.getDipendente());
-		model.addAttribute("scatola", s);
-		return "ordine.html";
-	}
-	
 	@RequestMapping(value = "/nuovoOrdine/{id}", method = RequestMethod.GET)
 	public String nuovoOrdine(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("ordine", new Ordine());

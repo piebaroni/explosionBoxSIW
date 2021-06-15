@@ -30,6 +30,7 @@ public class ScatolaController {
 	public String getScatola(@PathVariable("id") Long id, Model model) {
 		Scatola s = this.service.trovaPerId(id);
 		model.addAttribute("scatola", s);
+		model.addAttribute("dipendente", s.getDipendente());
 		return "scatola.html";
 	}
 
