@@ -37,6 +37,7 @@ public class InizializzaDB /*implements ApplicationListener<ContextRefreshedEven
 	@Autowired
 	private ScatolaService csc;
 	
+	/*
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
 		
@@ -191,7 +192,7 @@ public class InizializzaDB /*implements ApplicationListener<ContextRefreshedEven
 		csc.inserisci(s2);
 		csc.inserisci(s3);
 		
-	}
+	}*/
 
 
 }
