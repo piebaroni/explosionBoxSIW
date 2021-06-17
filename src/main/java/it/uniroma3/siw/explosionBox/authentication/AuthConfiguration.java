@@ -33,7 +33,7 @@ public class AuthConfiguration extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.POST, "/admin/**").hasAnyAuthority(ADMIN_ROLE)
 		
 		// solo gli utenti autenticati con ruolo possono accedere a risorse con ordine/ordini
-		.antMatchers(HttpMethod.GET, "/ordine/**", "/ordini", "/nuovoOrdine/**").authenticated()
+		.antMatchers(HttpMethod.GET, "/ordine/**", "/ordini", "/nuovoOrdine/**", "/scatola/**").authenticated()
 		.antMatchers(HttpMethod.POST, "/faiOrdine").authenticated()
 		
 		// tutti gli utenti autenticati possono accere alle pagine rimanenti 
