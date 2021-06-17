@@ -1,6 +1,5 @@
 package it.uniroma3.siw.explosionBox.service;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
@@ -26,10 +25,6 @@ public class OrdineService {
 	
 	public List<Ordine> findAll(){
 		return (List<Ordine>) repository.findAll();
-	}
-	
-	public List<Ordine> trovaPerData(LocalDate data){
-		return repository.findByData(data);
 	}
 	
 	@Transactional
