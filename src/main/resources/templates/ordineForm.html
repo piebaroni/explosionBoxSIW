@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title th:text="#{pageTitle.ordine}"></title>
-        <link rel="stylesheet" th:href="@{/css/index.css}" />
+        <link rel="stylesheet" th:href="@{/css/login.css}" />
         <link rel="preconnect" href="https://fonts.gstatic.com"/>
         <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Quicksand:wght@600&display=swap" rel="stylesheet"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -21,7 +21,7 @@
                     </tr>
                     <tr>
                         <td>Recapito telefonico</td>
-                        <td><input type="number" placeholder="telefono"
+                        <td><input type="text" placeholder="telefono"
                                    th:field="${ordine.telefono}"/></td>
                         <td th:if="${#fields.hasErrors('telefono')}"
                             th:errors="${ordine.telefono}" th:style="'color:red'"></td>
