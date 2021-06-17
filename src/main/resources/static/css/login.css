@@ -3,13 +3,14 @@ section{
     border: 3px solid black;
     padding:20px;
     width:350px;
-    
 }
+
 #titolo{
   text-align:center;
   font-family:'Quicksand', sans-serif;
   font-size: 30px;
 }
+
 td{
   display:block;
   margin-bottom:10px;
@@ -20,6 +21,7 @@ td{
 form{
   margin:0 auto;
 }
+
 input {
   font-family:'Quicksand', sans-serif;
   font-size:16px;
@@ -27,7 +29,6 @@ input {
   border: 0.7px solid grey;
   width:280px;
   margin-top:-10px;
-  
 }
 
 button{
@@ -38,6 +39,7 @@ button{
   margin-top:10px;
   font-family:'Quicksand', sans-serif;
   }
+
 #reg{
   font-size:10px;
   text-align:center;
@@ -57,13 +59,13 @@ button{
   text-decoration: none;
   color:black;
 }
+
 h2{
   font-family:'Quicksand', sans-serif;
   color: #DECBC3;
   text-align: center;
   font-size: 40px;
 }
-
 
 td{
   font-family:'Quicksand', sans-serif;
@@ -75,6 +77,7 @@ td{
   text-align:right;
   font-family:'Quicksand', sans-serif;
 }
+
 .login a{
 	color:black;
 	text-decoration: none;
