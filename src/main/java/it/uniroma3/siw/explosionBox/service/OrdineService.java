@@ -38,5 +38,8 @@ public class OrdineService {
 		if(optional.isPresent()) return optional.get();
 		return null;
 	}
+	public void eliminaOrdine(Long id) {
+		this.repository.deleteById(id);
+	}
 	
 }

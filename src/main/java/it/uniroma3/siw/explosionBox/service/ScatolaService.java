@@ -34,6 +34,9 @@ public class ScatolaService {
 	public void eliminaScatola(Long id) {
 		this.repository.deleteById(id);
 	}
+	public void eliminaScatolaOrdine(Scatola s) {
+		this.repository.delete(s);
+	}
 	
 	@Transactional
 	public Scatola trovaPerId(Long id) {

@@ -32,6 +32,9 @@ public class OrdineController {
 	private OrdineService service;
 	
 	@Autowired
+	private ScatolaService serviceScatola;
+	
+	@Autowired
 	private CredentialsService credentialsService;
 	
 	@Autowired
@@ -58,6 +61,18 @@ public class OrdineController {
 		model.addAttribute("ordine", new Ordine());
 		this.id = id;
 		return "ordineForm.html";
+	}
+	
+	@RequestMapping(value="/removeOrdine/{id}", method = RequestMethod.GET)
+	public String rimuoviOrdine(@PathVariable("id") Long id, Model model) {
+		Ordine ordine= this.service.trovaPerId(id);
+		this.scatolaService.eliminaScatolaOrdine(ordine.getScatola());
+		this.service.eliminaOrdine(id);
+		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		Credentials credentials = credentialsService.getCredentialsByUsername(userDetails.getUsername());
+		Utente u = credentials.getUtente();
+		model.addAttribute("ordini", this.service.trovaPerCliente(u.getId()));
+		return "listaOrdini.html";
 	}
 	
 	@RequestMapping(value = "/faiOrdine", method = RequestMethod.POST)
